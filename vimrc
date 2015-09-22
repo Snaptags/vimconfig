@@ -71,10 +71,14 @@ set laststatus=2
 set linespace=3
 
 "Better line wrapping
-set nowrap
-set textwidth=79
+set wrap
+set textwidth=0
 set formatoptions=qrn1
 set showbreak=…
+
+" yark and delete directly into the system clipboard in order to store the
+" clips using ditto
+set clipboard=unnamed
 
 " use the Wrap command below for entering text in paragraphs without
 " automatic line breaknig:
@@ -88,7 +92,7 @@ set hlsearch
 
 
 source $VIMRUNTIME/vimrc_example.vim
-source $VIMRUNTIME/mswin.vim
+" source $VIMRUNTIME/mswin.vim
 "
 "let skip_loading_mswin=1
 
@@ -117,8 +121,8 @@ let g:airline_theme = 'solarized'
 " => General
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " " Sets how many lines of history VIM has to remember
-" set history=700
-"
+set history=700
+
 " " Set to auto read when a file is changed from the outside
 set autoread
 
@@ -196,7 +200,14 @@ nnoremap <Space> 0
 " not working :-(
 " inoremap z<Undo> <Undo>
 " nnoremap z<Undo> <Undo>
-"
+
+" filter command history using C-p and C-n as well:
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+
+" Map Ctrl-Backspace to delete the previous word in insert mode.
+:imap <C-BS> <C-W>
+
 " Open URI under cursor. 
 nmap <Leader><Leader> <Plug>(openbrowser-smart-search) 
 " Open selected URI. 
@@ -216,6 +227,10 @@ let g:screen_size_restore_pos = 1
 " This is useful if you routinely run more than one Vim instance.
 " For all Vim to use the same settings, change this to 0.
 let g:screen_size_by_vim_instance = 0
+
+" for <tab> use the autocomplete menu as provided by zsh:
+set wildmenu
+set wildmode=full
 
 set diffexpr=MyDiff()
 function! MyDiff()
