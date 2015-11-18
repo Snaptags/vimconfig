@@ -77,8 +77,8 @@ set formatoptions=qrn1
 set showbreak=…
 
 " yark and delete directly into the system clipboard in order to store the
-" clips using ditto
-set clipboard=unnamed
+" clips using ditto → will result in LOTS of clips, not that good…
+"set clipboard=unnamed
 
 " use the Wrap command below for entering text in paragraphs without
 " automatic line breaknig:
@@ -90,8 +90,12 @@ set incsearch
 "Highlight searching
 set hlsearch
 
+"case sensitivity of search patterns. ignore case UNLESS at least one
+"uppercase character is used:
+set ignorecase
+set smartcase
 
-source $VIMRUNTIME/vimrc_example.vim
+" source $VIMRUNTIME/vimrc_example.vim
 " source $VIMRUNTIME/mswin.vim
 "
 "let skip_loading_mswin=1
@@ -231,6 +235,11 @@ let g:screen_size_by_vim_instance = 0
 " for <tab> use the autocomplete menu as provided by zsh:
 set wildmenu
 set wildmode=full
+
+" Source the vimrc file after saving it
+if has("autocmd")
+  autocmd bufwritepost .vimrc source $MYVIMRC
+endif
 
 set diffexpr=MyDiff()
 function! MyDiff()
