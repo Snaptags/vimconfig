@@ -36,10 +36,12 @@ let mapleader="ä"
 
 "Set the color scheme. Change this to your preference.
 "Here's 100 to choose from: http://www.vim.org/scripts/script.php?script_id=625
-"set term=xterm
-"set t_Co=256
-"let &t_AB="\e[48;5;%dm"
-"let &t_AF="\e[38;5;%dm"
+if !has("gui_running")
+    set term=xterm
+    set t_Co=256
+    let &t_AB="\e[48;5;%dm"
+    let &t_AF="\e[38;5;%dm"
+endif
 set background=dark
 colorscheme solarized
 
