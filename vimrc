@@ -36,14 +36,15 @@ let mapleader="ä"
 
 "Set the color scheme. Change this to your preference.
 "Here's 100 to choose from: http://www.vim.org/scripts/script.php?script_id=625
-if !has("gui_running")
-    set term=xterm
-    set t_Co=256
+set background=dark
+colorscheme solarized
+set term=xterm
+set t_Co=256
+" Stupid Windows settings
+if has('win32') && !has('gui_running') && !empty($CONEMUBUILD)
     let &t_AB="\e[48;5;%dm"
     let &t_AF="\e[38;5;%dm"
 endif
-set background=dark
-colorscheme solarized
 
 "to get a block cursor in normal mode
 if !has('win32')
