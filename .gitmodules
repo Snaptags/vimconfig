@@ -19,3 +19,6 @@
 [submodule "bundle/vim-visualstar"]
 	path = bundle/vim-visualstar
 	url = https://github.com/thinca/vim-visualstar
+[submodule "bundle/ack.vim"]
+	path = bundle/ack.vim
+	url = https://github.com/mileszs/ack.vim.git
