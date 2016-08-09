@@ -112,6 +112,9 @@ set fileencodings=ucs-bom,utf8,prc
 " hide vim mode indicator in favour of airline status bar
 set noshowmode
 
+" highlight yanked text: http://www.vim.org/scripts/script.php?script_id=5425
+map y <Plug>(highlightedyank)
+
 " airline fonts
 set guifont=Consolas_for_Powerline_FixedD:h11
 let g:Powerline_symbols="fancy"
