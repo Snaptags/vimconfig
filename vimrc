@@ -114,7 +114,7 @@ set noshowmode
 
 " highlight yanked text: http://www.vim.org/scripts/script.php?script_id=5425
 " yanking visual selection to clipboard does not work
-" map y <Plug>(highlightedyank)
+map y <Plug>(highlightedyank)
 
 " airline fonts
 set guifont=Consolas_for_Powerline_FixedD:h11
