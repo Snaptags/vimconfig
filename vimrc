@@ -172,6 +172,10 @@ inoremap jj <ESC>
 " open NERDTree
 nnoremap ß :NERDTreeToggle<CR>
 
+" make help file navigation useable on German keyboard
+nnoremap ü <C-]>
+nnoremap Ü <C-O>
+
 " Neo 2 Layer 4 fixes
 inoremap l<Up> k
 nnoremap l<Up> <Up>
