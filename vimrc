@@ -98,15 +98,9 @@ set hlsearch
 set ignorecase
 set smartcase
 
-" source $VIMRUNTIME/vimrc_example.vim
-" source $VIMRUNTIME/mswin.vim
-"
-"let skip_loading_mswin=1
-
 " default file encoding
-set encoding=utf-8
-set enc=utf-8
-set fileencoding=utf-8
+set encoding=utf-8      " sets how vim shall represent characters internally
+set fileencoding=utf-8  " the encoding written to file
 set fileencodings=ucs-bom,utf8,prc
 
 " hide vim mode indicator in favour of airline status bar
