@@ -168,7 +168,7 @@ let g:openbrowser_search_engines = extend(
 \)
 
 if !exists('g:openbrowser_open_filepath_in_vim')
-    let g:openbrowser_open_filepath_in_vim = 1
+    let g:openbrowser_open_filepath_in_vim = 0
 endif
 if !exists('g:openbrowser_open_vim_command')
     let g:openbrowser_open_vim_command = 'vsplit'
@@ -237,32 +237,35 @@ command!
 
 " Key-mapping
 nnoremap <silent> <Plug>(openbrowser-open) :<C-u>call openbrowser#_keymapping_open('n')<CR>
-vnoremap <silent> <Plug>(openbrowser-open) :<C-u>call openbrowser#_keymapping_open('v')<CR>
+xnoremap <silent> <Plug>(openbrowser-open) :<C-u>call openbrowser#_keymapping_open('v')<CR>
 nnoremap <silent> <Plug>(openbrowser-search) :<C-u>call openbrowser#_keymapping_search('n')<CR>
-vnoremap <silent> <Plug>(openbrowser-search) :<C-u>call openbrowser#_keymapping_search('v')<CR>
+xnoremap <silent> <Plug>(openbrowser-search) :<C-u>call openbrowser#_keymapping_search('v')<CR>
 nnoremap <silent> <Plug>(openbrowser-smart-search) :<C-u>call openbrowser#_keymapping_smart_search('n')<CR>
-vnoremap <silent> <Plug>(openbrowser-smart-search) :<C-u>call openbrowser#_keymapping_smart_search('v')<CR>
+xnoremap <silent> <Plug>(openbrowser-smart-search) :<C-u>call openbrowser#_keymapping_smart_search('v')<CR>
 
 
 " Popup menus for Right-Click
-if !get(g:, 'openbrowser_no_default_menus', 0)
-    nmenu PopUp.-OpenBrowserSep- :
-    vmenu PopUp.-OpenBrowserSep- :
-    if get(g:, 'openbrowser_menu_lang', &langmenu !=# '' ? &langmenu : v:lang) ==# 'ja'
-        nmenu <silent> PopUp.カーソル下のURLを開く <Plug>(openbrowser-open)
-        vmenu <silent> PopUp.カーソル下のURLを開く <Plug>(openbrowser-open)
-        nmenu <silent> PopUp.カーソル下の単語を開く <Plug>(openbrowser-search)
-        vmenu <silent> PopUp.カーソル下の単語を開く <Plug>(openbrowser-search)
-        nmenu <silent> PopUp.カーソル下の単語かURLを開く <Plug>(openbrowser-smart-search)
-        vmenu <silent> PopUp.カーソル下の単語かURLを開く <Plug>(openbrowser-smart-search)
-    else
+if !get(g:, 'openbrowser_no_default_menus', (&guioptions =~# 'M'))
+    function! s:add_menu() abort
+        if get(g:, 'openbrowser_menu_lang',
+        \      &langmenu !=# '' ? &langmenu : v:lang) =~# '^ja'
+            runtime! lang/openbrowser_menu_ja.vim
+        endif
+
+        nnoremenu PopUp.-OpenBrowserSep- <Nop>
+        xnoremenu PopUp.-OpenBrowserSep- <Nop>
         nmenu <silent> PopUp.Open\ URL <Plug>(openbrowser-open)
-        vmenu <silent> PopUp.Open\ URL <Plug>(openbrowser-open)
+        xmenu <silent> PopUp.Open\ URL <Plug>(openbrowser-open)
         nmenu <silent> PopUp.Open\ Word(s) <Plug>(openbrowser-search)
-        vmenu <silent> PopUp.Open\ Word(s) <Plug>(openbrowser-search)
+        xmenu <silent> PopUp.Open\ Word(s) <Plug>(openbrowser-search)
         nmenu <silent> PopUp.Open\ URL\ or\ Word(s) <Plug>(openbrowser-smart-search)
-        vmenu <silent> PopUp.Open\ URL\ or\ Word(s) <Plug>(openbrowser-smart-search)
-    endif
+        xmenu <silent> PopUp.Open\ URL\ or\ Word(s) <Plug>(openbrowser-smart-search)
+    endfunction
+
+    augroup openbrowser-menu
+        autocmd!
+        autocmd GUIEnter * call s:add_menu()
+    augroup END
 endif
 
 " }}}

@@ -85,25 +85,33 @@ INTERFACE							*openbrowser-interface* {{{
 ------------------------------------------------------------------------------
 KEYMAPPINGS					*openbrowser-keymappings* {{{
 
-n <Plug>(openbrowser-open)				|<Plug>(openbrowser-open)|
-	Open current URL under cursor with |:OpenBrowser|.
+n <Plug>(openbrowser-open)				*<Plug>(openbrowser-open)*
+	1. If openbrowser finds a URL around cursor,
+	   open the URL with |openbrowser#open()|.
+	2. If openbrowser finds a filepath around cursor,
+	   open the filepath with |openbrowser#open()|.
 
-v <Plug>(openbrowser-open)				|<Plug>(openbrowser-open)|
-	Open selected text with |:OpenBrowser|.
+	See |openbrowser-url-detection| and
+	|openbrowser-filepath-detection| for
+	more URL and filepath detection details.
 
+v <Plug>(openbrowser-open)
+	If openbrowser finds a URL(s) from selected text,
+	open the all URLs with |openbrowser#open()|.
 
-n <Plug>(openbrowser-search)				|<Plug>(openbrowser-search)|
+n <Plug>(openbrowser-search)				*<Plug>(openbrowser-search)*
 	Open current <cword> text with |:OpenBrowserSearch|.
 
-v <Plug>(openbrowser-search)				|<Plug>(openbrowser-search)|
+v <Plug>(openbrowser-search)
 	Open selected text with |:OpenBrowserSearch|.
 
+n <Plug>(openbrowser-smart-search)		*<Plug>(openbrowser-smart-search)*
+	Call |<Plug>(openbrowser-open)| and if it fails,
+	call |openbrowser#search()| with `expand('<cword>')`.
 
-n <Plug>(openbrowser-smart-search)	|<Plug>(openbrowser-smart-search)|
-	Open current <cword> text with |:OpenBrowserSmartSearch|.
-
-v <Plug>(openbrowser-smart-search)	|<Plug>(openbrowser-smart-search)|
-	Open selected text with |:OpenBrowserSmartSearch|.
+v <Plug>(openbrowser-smart-search)
+	Call |<Plug>(openbrowser-open)| and if it fails,
+	call |openbrowser#search()| with selected text.
 
 }}}
 ------------------------------------------------------------------------------
@@ -125,7 +133,7 @@ g:openbrowser_browser_commands		*g:openbrowser_browser_commands*
 	MS Windows:
 		[
 		\ {"name": "rundll32",
-		\  "args": "rundll32 url.dll,FileProtocolHandler {uri}"}
+		\  "args": "rundll32 url.dll,FileProtocolHandler {use_vimproc ? uri : uri_noesc}"}
 		\]
 	Unix like environment:
 		[
@@ -159,6 +167,13 @@ g:openbrowser_browser_commands		*g:openbrowser_browser_commands*
 		\   {'name': 'rundll32',
 		\    'args': 'rundll32 url.dll,FileProtocolHandler {use_vimproc ? uri : uri_noesc}'}
 		\]
+<
+	More example:
+	1. Use Google Chrome instead of default browser: >
+	let g:openbrowser_browser_commands = [
+	\   {'name': 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe',
+	\    'args': ['start', '{browser}', '{uri}']}
+	\]
 <
 g:openbrowser_open_commands			*g:openbrowser_open_commands*
 g:openbrowser_open_rules			*g:openbrowser_open_rules*
@@ -314,9 +329,11 @@ g:openbrowser_use_vimproc
 
 					*g:openbrowser_no_default_menus*
 g:openbrowser_no_default_menus
-								(default: None)
+								(default: &guioptions =~# 'M')
 	If this value is defined and non-zero,
 	do not define default menus.
+	Default value is non-zero if 'guioptions' includes "M".
+	Otherwise the value is zero.
 	See |openbrowser-menus| for the default menus.
 
 g:openbrowser_menu_lang		*g:openbrowser_menu_lang*
@@ -410,6 +427,28 @@ openbrowser#smart_search({query} [, {search-engine}])			*openbrowser#smart_searc
 	|g:openbrowser_default_search| is used instead.
 
 }}}
+}}}
+==============================================================================
+URL DETECTION		*openbrowser-url-detection* {{{
+
+1. If the character under cursor is a WORD and is a URL, return it.
+	1.1. if `expand('<cWORD>')` is an URL, return it.
+2. If the character under cursor is not a WORD,
+	2.1. Go to left WORD, and if `expand('<cWORD>')` is an URL, return it.
+	2.2. Go to right WORD, and if `expand('<cWORD>')` is an URL, return it.
+
+}}}
+==============================================================================
+FILEPATH DETECTION		*openbrowser-filepath-detection* {{{
+
+1. If the character under cursor is a WORD and is a filepath, return it.
+	1.1. if `expand('<cWORD>')` is an filepath, return it.
+2. If the character under cursor is not a WORD,
+	2.1. Go to left WORD, and if `expand('<cWORD>')`
+	     is an filepath, return it.
+	2.2. Go to right WORD, and if `expand('<cWORD>')`
+	     is an filepath, return it.
+
 }}}
 ==============================================================================
 AVAILABLE SYNTAX IN OPTIONS		*openbrowser-option-syntax* {{{
@@ -570,6 +609,9 @@ Great thanks for the peoples. (alphabetical order)
 * itchyny (@itchyny)
 * stardiviner (@stardiviner)
 * toooooooby (@toooooooby)
+
+More people listed in:
+https://github.com/tyru/open-browser.vim/graphs/contributors
 
 }}}
 ==============================================================================
