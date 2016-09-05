@@ -110,17 +110,21 @@ set noshowmode
 map y <Plug>(highlightedyank)
 
 " airline fonts
-set guifont=Consolas_for_Powerline_FixedD:h11
-let g:Powerline_symbols="fancy"
-let g:airline_symbols = {}
-let g:airline_left_sep = "\u2b80" "use double quotes here
-let g:airline_left_alt_sep = "\u2b81"
-let g:airline_right_sep = "\u2b82"
-let g:airline_right_alt_sep = "\u2b83"
-let g:airline_symbols.branch = "\u2b60"
-let g:airline_symbols.readonly = "\u2b64"
-let g:airline_symbols.linenr = "\u2b61"
-let g:airline_theme = 'solarized'
+if !has('win32')¬
+    set guifont=DejaVuSansMono:h11¬
+else¬
+    set guifont=Consolas_for_Powerline_FixedD:h11
+    let g:Powerline_symbols="fancy"
+    let g:airline_symbols = {}
+    let g:airline_left_sep = "\u2b80" "use double quotes here
+    let g:airline_left_alt_sep = "\u2b81"
+    let g:airline_right_sep = "\u2b82"
+    let g:airline_right_alt_sep = "\u2b83"
+    let g:airline_symbols.branch = "\u2b60"
+    let g:airline_symbols.readonly = "\u2b64"
+    let g:airline_symbols.linenr = "\u2b61"
+    let g:airline_theme = 'solarized'
+endif
 
 " => General
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
