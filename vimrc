@@ -233,8 +233,9 @@ vmap <Leader><Leader> <Plug>(openbrowser-smart-search)
 " Music library
 :command E2m :syntax off|%s/\cE:%5Cmusik/M:%5Cmusik/g|:syntax on|:wq
 
-" shortcut for vim renamer
+" shortcuts for vim renamer
 :command F s/.*/folder.jpg/|nohl
+:command Dela %s/\(^\d\d - \).* - /\1/|%s/^01 - /&/|nohl
 
 " http://vim.wikia.com/wiki/Restore_screen_size_and_position
 " " To enable the saving and restoring of screen positions.
