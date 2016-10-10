@@ -22,6 +22,11 @@ syntax enable
 "Display current cursor position in lower right corner.
 set ruler
 
+" Search down into subfolders
+" Provides tab-completion for all file-related tasks
+" Source: https://www.youtube.com/watch?v=XA2WjJbmmoM
+set path+=**
+
 "set window size for gvim
 if has("gui_running")
   " GUI is running or is about to start.
