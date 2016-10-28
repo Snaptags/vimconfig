@@ -58,6 +58,10 @@ if !has('win32')
     let &t_EI.="\e[1 q"
     let &t_te.="\e[0 q"
 endif
+"
+" https://github.com/airblade/vim-gitgutter/issues/377
+let g:gitgutter_async=0
+let g:gitgutter_max_signs = 500  " default value
 
 "Show command in bottom right portion of the screen
 set showcmd
