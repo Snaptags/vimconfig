@@ -224,6 +224,10 @@ nnoremap <Space> 0
 " inoremap z<Undo> <Undo>
 " nnoremap z<Undo> <Undo>
 
+" jump to recent modifications
+nnoremap <A-down> :GitGutterNextHunk<CR>
+nnoremap <A-up> :GitGutterPrevHunk<CR>
+
 " filter command history using C-p and C-n as well:
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
