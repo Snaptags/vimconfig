@@ -16,7 +16,7 @@
         ignore = dirty
 [submodule "bundle/vim-renamer"]
 	path = bundle/vim-renamer
-	url = https://github.com/qpkorr/vim-renamer
+	url = https://github.com/qpkorr/vim-renamer.git
         ignore = dirty
 [submodule "bundle/vim-visualstar"]
 	path = bundle/vim-visualstar
