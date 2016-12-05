@@ -1,6 +1,9 @@
 :OpenBrowser	openbrowser.txt	/*:OpenBrowser*
 :OpenBrowserSearch	openbrowser.txt	/*:OpenBrowserSearch*
 :OpenBrowserSmartSearch	openbrowser.txt	/*:OpenBrowserSmartSearch*
+<Plug>(openbrowser-open)	openbrowser.txt	/*<Plug>(openbrowser-open)*
+<Plug>(openbrowser-search)	openbrowser.txt	/*<Plug>(openbrowser-search)*
+<Plug>(openbrowser-smart-search)	openbrowser.txt	/*<Plug>(openbrowser-smart-search)*
 OpenBrowser()	openbrowser.txt	/*OpenBrowser()*
 OpenBrowserSearch()	openbrowser.txt	/*OpenBrowserSearch()*
 g:openbrowser_browser_commands	openbrowser.txt	/*g:openbrowser_browser_commands*
@@ -28,6 +31,7 @@ openbrowser-changelog	openbrowser.txt	/*openbrowser-changelog*
 openbrowser-commands	openbrowser.txt	/*openbrowser-commands*
 openbrowser-contents	openbrowser.txt	/*openbrowser-contents*
 openbrowser-faq	openbrowser.txt	/*openbrowser-faq*
+openbrowser-filepath-detection	openbrowser.txt	/*openbrowser-filepath-detection*
 openbrowser-functions	openbrowser.txt	/*openbrowser-functions*
 openbrowser-interface	openbrowser.txt	/*openbrowser-interface*
 openbrowser-introduction	openbrowser.txt	/*openbrowser-introduction*
@@ -38,5 +42,14 @@ openbrowser-menu-smart-search	openbrowser.txt	/*openbrowser-menu-smart-search*
 openbrowser-menus	openbrowser.txt	/*openbrowser-menus*
 openbrowser-option-syntax	openbrowser.txt	/*openbrowser-option-syntax*
 openbrowser-thanks	openbrowser.txt	/*openbrowser-thanks*
+openbrowser-url-detection	openbrowser.txt	/*openbrowser-url-detection*
 openbrowser-variables	openbrowser.txt	/*openbrowser-variables*
 openbrowser.txt	openbrowser.txt	/*openbrowser.txt*
+renamer	renamer.txt	/*renamer*
+renamer-changelog	renamer.txt	/*renamer-changelog*
+renamer-description	renamer.txt	/*renamer-description*
+renamer-improvements	renamer.txt	/*renamer-improvements*
+renamer-install	renamer.txt	/*renamer-install*
+renamer-usage	renamer.txt	/*renamer-usage*
+renamer-win-right-click	renamer.txt	/*renamer-win-right-click*
+renamer.txt	renamer.txt	/*renamer.txt*
