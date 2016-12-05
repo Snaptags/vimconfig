@@ -79,8 +79,8 @@ set autoindent
 "Always show the status line
 set laststatus=2
 
-"Prefer a slightly higher line height
-set linespace=3
+"Set line height to standard for a cleaner airline status bar look
+set linespace=0
 
 "Better line wrapping
 set wrap
