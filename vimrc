@@ -123,6 +123,8 @@ if !has('win32')
     set guifont=DejaVuSansMono:h11¬
 endif
 
+let g:airline#extensions#tabline#enabled = 1
+
 if has('win32')
     set guifont=Consolas_for_Powerline_FixedD:h11
     let g:Powerline_symbols="fancy"
@@ -225,8 +227,25 @@ nnoremap <Space> 0
 " nnoremap z<Undo> <Undo>
 
 " jump to recent modifications
-nnoremap <A-down> :GitGutterNextHunk<CR>
-nnoremap <A-up> :GitGutterPrevHunk<CR>
+if !&diff
+    nnoremap <A-down> :GitGutterNextHunk<CR>
+    nnoremap <A-up> :GitGutterPrevHunk<CR>
+else
+    set cursorline
+    nnoremap <A-down> ]c
+    nnoremap <A-up> [c
+    nnoremap <A-left> do
+    nnoremap <A-right> dp
+    
+ " Fix the difficult-to-read default setting for diff text highlighting.  The
+" bang (!) is required since we are overwriting the DiffText setting. The highlighting
+" for "Todo" also looks nice (yellow) if you don't like the "MatchParen" colors.
+highlight! link DiffText ToDo
+
+    "hi DiffAdd    ctermfg=233 ctermbg=LightGreen guifg=#003300 guibg=#DDFFDD gui=none cterm=none
+    "hi DiffChange ctermbg=white  guibg=#ececec gui=none   cterm=none
+    "hi DiffText   ctermfg=233  ctermbg=yellow  guifg=#000033 guibg=#DDDDFF gui=none cterm=none
+endif
 
 " filter command history using C-p and C-n as well:
 cnoremap <C-p> <Up>
