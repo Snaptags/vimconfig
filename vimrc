@@ -88,12 +88,16 @@ set textwidth=0
 set formatoptions=qrn1
 set showbreak=…
 
-" yark and delete directly into the system clipboard in order to store the
+" Enable spell checking by default:
+set spelllang=de_20,en,it,nl,pt
+set spell
+
+" yank and delete directly into the system clipboard in order to store the
 " clips using ditto → will result in LOTS of clips, not that good…
 "set clipboard=unnamed
 
 " use the Wrap command below for entering text in paragraphs without
-" automatic line breaknig:
+" automatic line breaking:
 command! -nargs=* Wrap set wrap linebreak nolist textwidth=0 
 
 "Set incremental searching"
