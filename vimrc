@@ -107,6 +107,7 @@ function! ToggleSpell()
   echo "spell checking language:" g:myLangList[b:myLang]
 endfunction
 nmap <silent> <F7> :call ToggleSpell()<CR>
+nmap <silent> <F8> :se spell!<CR>
 "
 " yank and delete directly into the system clipboard in order to store the
 " clips using ditto → will result in LOTS of clips, not that good…
