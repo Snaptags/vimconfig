@@ -90,7 +90,9 @@ set showbreak=…
 
 " Enable spell checking by default:
 set spelllang=de_20,en,it,nl,pt
-set spell
+if !&diff
+  set spell
+endif
 
 " fancy spelling toggle
 " source: http://vim.wikia.com/wiki/Toggle_spellcheck_with_function_keys
@@ -107,6 +109,7 @@ function! ToggleSpell()
   echo "spell checking language:" g:myLangList[b:myLang]
 endfunction
 nmap <silent> <F7> :call ToggleSpell()<CR>
+nmap <silent> <F8> :se spell!<CR>
 "
 " yank and delete directly into the system clipboard in order to store the
 " clips using ditto → will result in LOTS of clips, not that good…
@@ -257,10 +260,10 @@ else
     nnoremap <A-left> do
     nnoremap <A-right> dp
     
- " Fix the difficult-to-read default setting for diff text highlighting.  The
-" bang (!) is required since we are overwriting the DiffText setting. The highlighting
-" for "Todo" also looks nice (yellow) if you don't like the "MatchParen" colors.
-highlight! link DiffText ToDo
+    " Fix the difficult-to-read default setting for diff text highlighting.  The
+    " bang (!) is required since we are overwriting the DiffText setting. The highlighting
+    " for "Todo" also looks nice (yellow) if you don't like the "MatchParen" colors.
+    highlight! link DiffText ToDo
 
     "hi DiffAdd    ctermfg=233 ctermbg=LightGreen guifg=#003300 guibg=#DDFFDD gui=none cterm=none
     "hi DiffChange ctermbg=white  guibg=#ececec gui=none   cterm=none
