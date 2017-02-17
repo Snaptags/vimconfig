@@ -144,6 +144,7 @@ map y <Plug>(highlightedyank)
 " airline fonts
 if !has('win32')
     set guifont=DejaVuSansMono:h11¬
+    let g:airline_powerline_fonts = 1
 endif
 
 let g:airline#extensions#tabline#enabled = 1
