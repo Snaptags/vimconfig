@@ -43,6 +43,10 @@ let mapleader="ä"
 "Here's 100 to choose from: http://www.vim.org/scripts/script.php?script_id=625
 set term=xterm
 set t_Co=256
+if !has('gui_running')
+  let g:solarized_termcolors=&t_Co
+  let g:solarized_termtrans=1
+endif
 set background=dark
 colorscheme solarized
 " Stupid Windows settings
