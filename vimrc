@@ -41,10 +41,14 @@ let mapleader="ä"
 
 "Set the color scheme. Change this to your preference.
 "Here's 100 to choose from: http://www.vim.org/scripts/script.php?script_id=625
-set background=dark
-colorscheme solarized
 set term=xterm
 set t_Co=256
+if !has('win32') && !has('gui_running')
+  let g:solarized_termcolors=&t_Co
+  let g:solarized_termtrans=1
+endif
+set background=dark
+colorscheme solarized
 " Stupid Windows settings
 if has('win32') && !has('gui_running') && !empty($CONEMUBUILD)
     let &t_AB="\e[48;5;%dm"
@@ -143,7 +147,12 @@ map y <Plug>(highlightedyank)
 
 " airline fonts
 if !has('win32')
-    set guifont=DejaVuSansMono:h11¬
+    " mkdir ~/.fonts/
+    " cd ~/.fonts/
+    " wget https://github.com/powerline/fonts/blob/master/DejaVuSansMono/DejaVu%20Sans%20Mono%20for%20Powerline.ttf
+    " fc-cache -vf ~/.fonts/
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline
+    let g:airline_powerline_fonts = 1
 endif
 
 let g:airline#extensions#tabline#enabled = 1
