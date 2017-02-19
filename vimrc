@@ -133,7 +133,7 @@ set smartcase
 " default file encoding
 set encoding=utf-8      " sets how vim shall represent characters internally
 set fileencoding=utf-8  " the encoding written to file
-set fileencodings=ucs-bom,utf8,prc
+set fileencodings=ucs-bom,utf8,prc,latin1
 
 " hide vim mode indicator in favour of airline status bar
 set noshowmode
