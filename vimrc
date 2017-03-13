@@ -190,7 +190,6 @@ function! s:airline_init()
   let g:airline_section_y = airline#section#create_right([
     \ 'fencbomffmt'
   \])
-  \])
 endfunction
 
 function! Airline_file_encoding_bom_file_format()
