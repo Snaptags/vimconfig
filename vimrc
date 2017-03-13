@@ -230,12 +230,12 @@ set softtabstop=4
 set expandtab " always insert spaces instead of tab characters
 
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,eol:¬,space:˼,trail:~,extends:>,precedes:<
 set list
 
 "Invisible character colors 
-highlight NonText guifg=#3a3a59
-highlight SpecialKey guifg=#3a3a59
+highlight NonText guifg=#3a3a59 ctermfg=5 ctermbg=8
+highlight SpecialKey guifg=#3a3a59 guibg=#002B36 ctermfg=5 ctermbg=8
 
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
