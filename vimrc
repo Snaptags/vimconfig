@@ -233,9 +233,14 @@ set expandtab " always insert spaces instead of tab characters
 set listchars=tab:▸\ ,eol:¬,space:˼,trail:~,extends:>,precedes:<
 set list
 
-"Invisible character colors 
-highlight NonText guifg=#3a3a59 ctermfg=5 ctermbg=8
-highlight SpecialKey guifg=#3a3a59 guibg=#002B36 ctermfg=5 ctermbg=8
+"Invisible character colors
+if !has('win32') && !has('gui_running')
+    highlight NonText ctermfg=5 ctermbg=0
+    highlight SpecialKey ctermfg=5 ctermbg=0
+else
+    highlight NonText guifg=#3a3a59 ctermfg=5 ctermbg=8
+    highlight SpecialKey guifg=#3a3a59 guibg=#002B36 ctermfg=5 ctermbg=8
+endif
 
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
