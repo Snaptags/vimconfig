@@ -36,7 +36,7 @@ endif
 
 "Ever notice a slight lag after typing the leader key + command? This lowers
 "the timeout.
-set timeoutlen=250
+set timeoutlen=250 ttimeoutlen=0 
 let mapleader="ä"
 
 "Set the color scheme. Change this to your preference.
