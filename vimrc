@@ -36,7 +36,7 @@ endif
 
 "Ever notice a slight lag after typing the leader key + command? This lowers
 "the timeout.
-set timeoutlen=250 ttimeoutlen=0 
+set timeoutlen=250 ttimeoutlen=0
 let mapleader="ä"
 
 "Set the color scheme. Change this to your preference.
@@ -121,7 +121,7 @@ nmap <silent> <F8> :se spell!<CR>
 
 " use the Wrap command below for entering text in paragraphs without
 " automatic line breaking:
-command! -nargs=* Wrap set wrap linebreak nolist textwidth=0 
+command! -nargs=* Wrap set wrap linebreak nolist textwidth=0
 
 "Set incremental searching"
 set incsearch
@@ -288,7 +288,7 @@ inoremap w<PageDown> <PageDown>
 nnoremap w<PageDown> <PageDown>
 inoremap ?<Insert> <Insert>
 nnoremap ?<Insert> <Insert>
-nnoremap \\ <c-]>  
+nnoremap \\ <c-]>
 nnoremap <Space> 0
 " not working :-(
 " inoremap z<Undo> <Undo>
@@ -304,7 +304,7 @@ else
     nnoremap <A-up> [c
     nnoremap <A-left> do
     nnoremap <A-right> dp
-    
+
     " Fix the difficult-to-read default setting for diff text highlighting.  The
     " bang (!) is required since we are overwriting the DiffText setting. The highlighting
     " for "Todo" also looks nice (yellow) if you don't like the "MatchParen" colors.
@@ -322,10 +322,10 @@ cnoremap <C-n> <Down>
 " Map Ctrl-Backspace to delete the previous word in insert mode.
 :imap <C-BS> <C-W>
 
-" Open URI under cursor. 
-nmap <Leader><Leader> <Plug>(openbrowser-smart-search) 
-" Open selected URI. 
-vmap <Leader><Leader> <Plug>(openbrowser-smart-search) 
+" Open URI under cursor.
+nmap <Leader><Leader> <Plug>(openbrowser-smart-search)
+" Open selected URI.
+vmap <Leader><Leader> <Plug>(openbrowser-smart-search)
 
 " JSON formatting
 :command Json :%!python -m json.tool
