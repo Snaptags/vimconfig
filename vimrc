@@ -235,8 +235,8 @@ set list
 
 "Invisible character colors
 if !has('win32') && !has('gui_running')
-    highlight NonText ctermfg=5 ctermbg=NONE
-    highlight SpecialKey ctermfg=5 ctermbg=NONE
+    highlight NonText ctermfg=13 ctermbg=NONE
+    highlight SpecialKey ctermfg=13 ctermbg=NONE
 else
     highlight NonText guifg=#3a3a59 ctermfg=5 ctermbg=8
     highlight SpecialKey guifg=#3a3a59 guibg=#002B36 ctermfg=5 ctermbg=8
