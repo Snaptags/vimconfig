@@ -52,6 +52,3 @@
 [submodule "bundle/ReplaceWithRegister"]
 	path = bundle/ReplaceWithRegister
 	url = https://github.com/vim-scripts/ReplaceWithRegister.git
-[submodule "bundle/vim-fullscreen"]
-	path = bundle/vim-fullscreen
-	url = https://github.com/ruedigerha/vim-fullscreen
