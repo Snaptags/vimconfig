@@ -294,6 +294,10 @@ nnoremap <Space> 0
 " inoremap z<Undo> <Undo>
 " nnoremap z<Undo> <Undo>
 
+" https://github.com/ruedigerha/vim-fullscreen
+" requires Python for Windows Extensions: https://sourceforge.net/projects/pywin32/files/
+nmap <silent> <F11> <Plug>(fullscreen_toggle)
+
 " jump to recent modifications
 if !&diff
     nnoremap <A-down> :GitGutterNextHunk<CR>
