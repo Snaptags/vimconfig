@@ -230,7 +230,7 @@ set softtabstop=4
 set expandtab " always insert spaces instead of tab characters
 
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬,space:⋅,trail:˽,extends:›,precedes:‹
+set listchars=tab:▸\ ,eol:¬,space:¸,trail:˽,extends:›,precedes:‹
 set list
 
 "Invisible character colors
@@ -256,7 +256,7 @@ nnoremap ü <C-]>
 nnoremap Ü <C-O>
 
 " Neo 2 Layer 4 fixes
-inoremap l<Up> k
+inoremap l<Up> k   
 nnoremap l<Up> <Up>
 vnoremap l<Up> k
 inoremap a<Down> j
