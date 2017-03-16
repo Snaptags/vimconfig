@@ -242,6 +242,10 @@ else
     highlight SpecialKey guifg=#3a3a59 guibg=#002B36 ctermfg=5 ctermbg=8
 endif
 
+if !has('win32') " use windows keybinding, too
+   nnoremap <silent> <C-q> <C-v>
+endif
+
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
