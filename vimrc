@@ -230,7 +230,11 @@ set softtabstop=4
 set expandtab " always insert spaces instead of tab characters
 
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬,space:¸,trail:˽,extends:›,precedes:‹
+if has("patch-7.4.710")
+    set listchars=tab:▸\ ,eol:¬,trail:˽,extends:›,precedes:‹,space:¸
+else
+    set listchars=tab:▸\ ,eol:¬,trail:˽,extends:›,precedes:‹
+endif
 set list
 
 "Invisible character colors
