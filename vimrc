@@ -143,7 +143,9 @@ set fileencodings=ucs-bom,utf8,latin1,prc
 set noshowmode
 
 " highlight yanked text: http://www.vim.org/scripts/script.php?script_id=5425
-map y <Plug>(highlightedyank)
+if has("patch-7.4.710")
+  map y <Plug>(highlightedyank)
+endif
 
 " airline fonts
 if !has('win32')
