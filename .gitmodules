@@ -49,9 +49,12 @@
 [submodule "bundle/vim-autoformat"]
 	path = bundle/vim-autoformat
 	url = https://github.com/Chiel92/vim-autoformat.git
+        ignore = dirty
 [submodule "bundle/ReplaceWithRegister"]
 	path = bundle/ReplaceWithRegister
 	url = https://github.com/vim-scripts/ReplaceWithRegister.git
+        ignore = dirty
 [submodule "vim-fullscreen-snaptags"]
 	path = bundle/vim-fullscreen
 	url = https://github.com/Snaptags/vim-fullscreen
+        ignore = dirty
