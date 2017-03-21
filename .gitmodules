@@ -58,3 +58,6 @@
 	path = bundle/vim-fullscreen
 	url = https://github.com/Snaptags/vim-fullscreen
         ignore = dirty
+[submodule "bundle/vim-devicons"]
+	path = bundle/vim-devicons
+	url = https://github.com/ryanoasis/vim-devicons.git

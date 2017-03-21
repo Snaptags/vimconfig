@@ -160,7 +160,7 @@ endif
 let g:airline#extensions#tabline#enabled = 1
 
 if has('win32')
-    set guifont=Consolas_for_Powerline_FixedD:h11
+    set guifont=ConsolasForPowerline_NF:h11
     let g:Powerline_symbols="fancy"
     let g:airline_symbols = {}
     let g:airline_left_sep = "\u2b80" "use double quotes here
@@ -170,7 +170,7 @@ if has('win32')
     let g:airline_symbols.maxlinenr = '☰'
     let g:airline_symbols.branch = "\u2b60"
     let g:airline_symbols.readonly = "\u2b64"
-    let g:airline_symbols.linenr = "\u2b61"
+    let g:airline_symbols.linenr = "" "\ue0a1
     let g:airline_theme = 'solarized'
 endif
 
@@ -189,6 +189,7 @@ call airline#parts#define_function(
 
 function! s:airline_init()
   let l:spc = g:airline_symbols.space
+  let g:airline_section_z = airline#section#create(['windowswap', 'obsession', '%3p%%'.spc, 'linenr', 'maxlinenr', spc.'%3v'])
   let g:airline_section_y = airline#section#create_right([
     \ 'fencbomffmt'
   \])
@@ -233,9 +234,9 @@ set expandtab " always insert spaces instead of tab characters
 
 " Use the same symbols as TextMate for tabstops and EOLs
 if has("patch-7.4.710")
-    set listchars=tab:▸\ ,eol:¬,trail:˽,extends:›,precedes:‹,space:¸
+    set listchars=tab:\ ,eol:¬,trail:˽,extends:›,precedes:‹,space:
 else
-    set listchars=tab:▸\ ,eol:¬,trail:˽,extends:›,precedes:‹
+    set listchars=tab:\ ,eol:¬,trail:˽,extends:›,precedes:‹
 endif
 set list
 
@@ -244,8 +245,8 @@ if !has('win32') && !has('gui_running')
     highlight NonText ctermfg=13 ctermbg=NONE
     highlight SpecialKey ctermfg=13 ctermbg=NONE
 else
-    highlight NonText guifg=#3a3a59 ctermfg=5 ctermbg=8
-    highlight SpecialKey guifg=#3a3a59 guibg=#002B36 ctermfg=5 ctermbg=8
+    highlight NonText guifg=#AE325B ctermfg=5 ctermbg=8
+    highlight SpecialKey guifg=#AE325B guibg=#002B36 ctermfg=5 ctermbg=8
 endif
 
 if !has('win32') " use windows keybinding, too
@@ -266,7 +267,7 @@ nnoremap ü <C-]>
 nnoremap Ü <C-O>
 
 " Neo 2 Layer 4 fixes
-inoremap l<Up> k   
+inoremap l<Up> k
 nnoremap l<Up> <Up>
 vnoremap l<Up> k
 inoremap a<Down> j
