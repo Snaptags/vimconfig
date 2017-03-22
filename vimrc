@@ -366,8 +366,10 @@ set wildmenu
 set wildmode=full
 
 " Source the vimrc file after saving it
+" Does not really work because of all the plugins…
 if has("autocmd")
-  autocmd bufwritepost .vimrc source $MYVIMRC
+"  autocmd bufwritepost vimrc source $MYVIMRC
+"  autocmd bufwritepost .vimrc source $MYVIMRC
 endif
 
 set diffexpr=MyDiff()
