@@ -9,6 +9,9 @@ let $LANG = 'en_US'         " sets the language of the messages / ui (vim)
 set langmenu=en    " sets the language of the menu (gvim)
 "set langmenu=en_US.UTF-8    " sets the language of the menu (only works for
 "command line vim)
+"
+" bom symbol for vim-devicons
+let g:WebDevIconsUnicodeByteOrderMarkerDefaultSymbol = ''
 
 " https://github.com/tpope/vim-pathogen - used for package management
 execute pathogen#infect()
