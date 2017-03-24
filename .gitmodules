@@ -61,3 +61,6 @@
 [submodule "bundle/vim-devicons"]
 	path = bundle/vim-devicons
 	url = https://github.com/ryanoasis/vim-devicons.git
+[submodule "bundle/vim-fugitive"]
+	path = bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
