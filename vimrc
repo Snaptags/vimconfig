@@ -310,7 +310,7 @@ nnoremap <Space> 0
 
 " https://github.com/ruedigerha/vim-fullscreen
 " requires Python for Windows Extensions: https://sourceforge.net/projects/pywin32/files/
-nmap <silent> <F11> <Plug>(fullscreen_toggle)
+nmap <silent> <F11> <Plug>(fullscreen_toggle) :winc =<CR>
 
 " jump to recent modifications
 if !&diff
