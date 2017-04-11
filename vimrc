@@ -436,6 +436,16 @@ if has("gui_running")
     endif
   endfunction
 
+  function! StartUp()
+      if g:screen_size_restore_pos == 1 
+          call ScreenRestore() 
+      endif
+      if &diff
+          " Display hint text
+          echo "Remember to use :diffo [turn diff off] :difft [diff turn on] :diffu [diff update] and :diffg LO/BA/RE"
+      endif
+  endfunction
+
   function! ScreenSave()
     " Save window size and position.
     if has("gui_running") && g:screen_size_restore_pos
@@ -461,6 +471,6 @@ if has("gui_running")
   if !exists('g:screen_size_by_vim_instance')
     let g:screen_size_by_vim_instance = 1
   endif
-  autocmd VimEnter * if g:screen_size_restore_pos == 1 | call ScreenRestore() | endif
+  autocmd VimEnter * call StartUp()
   autocmd VimLeavePre * if g:screen_size_restore_pos == 1 | call ScreenSave() | endif
 endif
