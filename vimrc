@@ -185,6 +185,9 @@ if has('autocmd')
   augroup END
 endif
 
+:autocmd BufReadPost *Owncloud/ToDo.txt :normal! Go
+" enter insert mode: feels a bit confusing though :autocmd BufReadPost *Owncloud/ToDo.txt :startinsert!
+
 call airline#parts#define_function(
   \ 'fencbomffmt',
   \ 'Airline_file_encoding_bom_file_format'
@@ -255,6 +258,18 @@ endif
 if !has('win32') " use windows keybinding, too
    nnoremap <silent> <C-q> <C-v>
 endif
+
+"vim-startify https://github.com/mhinz/vim-startify.git
+let g:startify_bookmarks = [ {'c': '~/vimfiles/vimrc'}, {'o': 'd:\ownCloud\ToDo.txt'} ]
+let g:ascii = [
+      \ '        __',
+      \ '.--.--.|__|.--------.',
+      \ '|  |  ||  ||        |',
+      \ ' \___/ |__||__|__|__|',
+      \ ''
+      \]
+let g:startify_custom_header =
+      \ 'map(g:ascii + startify#fortune#boxed(), "\"   \".v:val")'
 
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
