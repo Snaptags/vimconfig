@@ -255,6 +255,11 @@ else
     highlight SpecialKey guifg=#AE325B guibg=#002B36 ctermfg=5 ctermbg=8
 endif
 
+" indentLine https://github.com/Yggdroot/indentLine.git
+let g:indentLine_color_term = #AE325B
+let g:indentLine_color_gui = '#AE325B'
+let g:indentLine_char = ''
+
 if !has('win32') " use windows keybinding, too
    nnoremap <silent> <C-q> <C-v>
 endif
