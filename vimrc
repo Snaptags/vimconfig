@@ -256,7 +256,7 @@ else
 endif
 
 " indentLine https://github.com/Yggdroot/indentLine.git
-let g:indentLine_color_term = #AE325B
+let g:indentLine_color_term = 5
 let g:indentLine_color_gui = '#AE325B'
 let g:indentLine_char = ''
 
