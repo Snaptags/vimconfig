@@ -330,6 +330,7 @@ nnoremap <Space> 0
 
 " https://github.com/ruedigerha/vim-fullscreen
 " requires Python for Windows Extensions: https://sourceforge.net/projects/pywin32/files/
+:command Fullscreen call fullscreen#maximize()|winc =
 nmap <silent> <F11> <Plug>(fullscreen_toggle) :winc =<CR>
 
 " jump to recent modifications
@@ -352,6 +353,9 @@ else
     "hi DiffChange ctermbg=white  guibg=#ececec gui=none   cterm=none
     "hi DiffText   ctermfg=233  ctermbg=yellow  guifg=#000033 guibg=#DDDDFF gui=none cterm=none
 endif
+
+" convenience hotkey to quickly exit from diff mode
+nnoremap <A-q> :qa<CR>
 
 " filter command history using C-p and C-n as well:
 cnoremap <C-p> <Up>
