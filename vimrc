@@ -188,8 +188,7 @@ if has('autocmd')
   augroup END
 endif
 
-:autocmd BufReadPost *Owncloud/ToDo.txt :normal! Go
-" enter insert mode: feels a bit confusing though :autocmd BufReadPost *Owncloud/ToDo.txt :startinsert!
+:autocmd BufReadPost *Owncloud/VimWiki/ToDo.md :normal! Go
 
 call airline#parts#define_function(
   \ 'fencbomffmt',
@@ -270,7 +269,7 @@ if !has('win32') " use windows keybinding, too
 endif
 
 "vim-startify https://github.com/mhinz/vim-startify.git
-let g:startify_bookmarks = [ {'c': '~/vimfiles/vimrc'}, {'o': 'd:\ownCloud\ToDo.txt'} ]
+let g:startify_bookmarks = [ {'c': '~/vimfiles/vimrc'}, {'o': 'd:\ownCloud\VimWiki\ToDo.md'}, {'w': 'd:\ownCloud\VimWiki\index.md'} ]
 let g:ascii = [
       \ '        __',
       \ '.--.--.|__|.--------.',
