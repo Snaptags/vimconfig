@@ -101,6 +101,9 @@ if !&diff
   set spell
 endif
 
+" vimwiki/vimwiki https://github.com/vimwiki/vimwiki
+let g:vimwiki_list = [{'path': 'd:/owncloud/VimWiki/', 'syntax': 'markdown', 'ext': '.md'}]
+
 " fancy spelling toggle
 " source: http://vim.wikia.com/wiki/Toggle_spellcheck_with_function_keys
 let b:myLang=0
@@ -220,8 +223,8 @@ set history=700
 set autoread
 
 " do not place backup- or swap-files in local directories
-set backupdir=$HOME/AppData/Local/Temp/,.
-set directory=$HOME/AppData/Local/Temp/,.
+set backupdir=$HOME/AppData/Local/Temp/
+set directory=$HOME/AppData/Local/Temp/
 
 if exists("+undofile")
   " undofile - This allows you to use undos after exiting and restarting
