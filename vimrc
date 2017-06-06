@@ -103,6 +103,8 @@ endif
 
 " vimwiki/vimwiki https://github.com/vimwiki/vimwiki
 let g:vimwiki_list = [{'path': 'd:/owncloud/VimWiki/', 'syntax': 'markdown', 'ext': '.md'}]
+map <Leader>tt <Plug>VimwikiToggleListItem
+nmap <Leader>d <Plug>VimwikiMakeDiaryNote
 
 " fancy spelling toggle
 " source: http://vim.wikia.com/wiki/Toggle_spellcheck_with_function_keys
