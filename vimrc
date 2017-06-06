@@ -273,11 +273,11 @@ endif
 "vim-startify https://github.com/mhinz/vim-startify.git
 let g:startify_bookmarks = [ {'c': '~/vimfiles/vimrc'}, {'o': 'd:\ownCloud\VimWiki\ToDo.md'}, {'w': 'd:\ownCloud\VimWiki\index.md'} ]
 let g:ascii = [
-      \ '        __',
-      \ '.--.--.|__|.--------.',
-      \ '|  |  ||  ||        |',
-      \ ' \___/ |__||__|__|__|',
-      \ ''
+      \ '         __',
+      \ ' .--.--.|__|.--------.',
+      \ ' |  |  ||  ||        |',
+      \ '  \___/ |__||__|__|__|',
+      \ ' '
       \]
 let g:startify_custom_header =
       \ 'map(g:ascii + startify#fortune#boxed(), "\"   \".v:val")'
