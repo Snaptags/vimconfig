@@ -73,3 +73,6 @@
 [submodule "bundle/vim-wiki"]
 	path = bundle/vim-wiki
 	url = https://github.com/vimwiki/vimwiki.git
+[submodule "bundle/open-browser.vim"]
+	path = bundle/open-browser.vim
+	url = https://github.com/tyru/open-browser.vim.git
