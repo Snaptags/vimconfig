@@ -76,3 +76,6 @@
 [submodule "bundle/open-browser.vim"]
 	path = bundle/open-browser.vim
 	url = https://github.com/tyru/open-browser.vim.git
+[submodule "bundle/vim-characterize"]
+	path = bundle/vim-characterize
+	url = https://github.com/tpope/vim-characterize.git
