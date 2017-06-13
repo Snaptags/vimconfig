@@ -22,6 +22,9 @@ filetype plugin on
 filetype indent on
 syntax enable
 
+"improve performance for long lines:
+set synmaxcol=200
+
 "Display current cursor position in lower right corner.
 set ruler
 
