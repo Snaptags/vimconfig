@@ -341,6 +341,7 @@ nnoremap <Space> 0
 " requires Python for Windows Extensions: https://sourceforge.net/projects/pywin32/files/
 :command Fullscreen call fullscreen#maximize()|winc =
 nmap <silent> <F11> <Plug>(fullscreen_toggle) :winc =<CR>
+nmap <silent> <F12> qa
 
 " jump to recent modifications
 if !&diff
