@@ -45,6 +45,12 @@ call minpac#add('tpope/vim-characterize')
 command! PackUpdate call minpac#update()
 command! PackClean call minpac#clean()
 
+" auto-install plugins if they are missing
+let $VIMHOME=expand('<sfile>:p:h')
+if !isdirectory($VIMHOME . '/pack/minpac/start/vim-airline')
+    call minpac#update()
+    so $MYVIMRC
+endif
 "Enable filetypes
 filetype on
 filetype plugin on
