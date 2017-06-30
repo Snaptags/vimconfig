@@ -445,6 +445,10 @@ set wildmode=full
 if has("autocmd")
 "  autocmd bufwritepost vimrc source $MYVIMRC
 "  autocmd bufwritepost .vimrc source $MYVIMRC
+  augroup vimrc_help
+    autocmd!
+    autocmd BufEnter *.txt if &buftype == 'help' | wincmd L | endif
+  augroup END
 endif
 
 set diffexpr=MyDiff()
