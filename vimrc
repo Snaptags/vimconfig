@@ -230,10 +230,12 @@ endif
 
 :autocmd BufReadPost *Owncloud/VimWiki/ToDo.md :normal! Go
 
-call airline#parts#define_function(
-  \ 'fencbomffmt',
-  \ 'Airline_file_encoding_bom_file_format'
-\)
+if has("gui_running")
+    call airline#parts#define_function(
+      \ 'fencbomffmt',
+      \ 'Airline_file_encoding_bom_file_format'
+    \)
+endif
 
 function! s:airline_init()
   let l:spc = g:airline_symbols.space
