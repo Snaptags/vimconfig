@@ -15,7 +15,7 @@ if has("autocmd")
     autocmd bufwritepost plugin_settings.vimrc source $MYVIMRC
     autocmd bufwritepost spelling.vimrc source $MYVIMRC
     autocmd bufreadpost vimrc NERDTree $VIMHOME/config/
-    autocmd bufreadpost .vimrc source $MYVIMRC
+    autocmd bufreadpost .vimrc NERDTree $VIMHOME/config/
     autocmd VimEnter * call StartUp()
     autocmd VimLeavePre * if g:screen_size_restore_pos == 1 | call ScreenSave() | endif
   augroup END

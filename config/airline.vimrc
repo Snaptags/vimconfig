@@ -52,3 +52,4 @@ function! Airline_file_encoding_bom_file_format()
   \)
 endfunction
 
+let g:airline_running = 1

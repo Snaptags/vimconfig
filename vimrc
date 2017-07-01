@@ -7,5 +7,7 @@ source $VIMHOME/config/plugin_settings.vimrc
 source $VIMHOME/config/commands.vimrc
 source $VIMHOME/config/keys.vimrc
 source $VIMHOME/config/spelling.vimrc
-source $VIMHOME/config/airline.vimrc
+if !exists("g:airline_running")
+  source $VIMHOME/config/airline.vimrc
+endif
 source $VIMHOME/config/diffexpr.vimrc
