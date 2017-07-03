@@ -16,8 +16,10 @@ if has("autocmd")
     autocmd bufwritepost spelling.vimrc source $MYVIMRC
     autocmd bufreadpost vimrc NERDTree $VIMHOME/config/
     autocmd bufreadpost .vimrc NERDTree $VIMHOME/config/
-    autocmd VimEnter * call StartUp()
-    autocmd VimLeavePre * if g:screen_size_restore_pos == 1 | call ScreenSave() | endif
+    if has("gui_running")
+      autocmd VimEnter * call StartUp()
+      autocmd VimLeavePre * if g:screen_size_restore_pos == 1 | call ScreenSave() | endif
+    endif
   augroup END
   augroup vimrc_help
     autocmd!
