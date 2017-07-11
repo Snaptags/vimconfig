@@ -16,6 +16,10 @@ nnoremap ß :NERDTreeToggle<CR>
 nnoremap ü <C-]>
 nnoremap Ü <C-O>
 
+" Jump to previous/next tag
+nnoremap <C-Left> ?<Bar><Bslash>zs<Bslash>k<Bslash>+<Bar><CR>
+nnoremap <C-Right> /<Bar><Bslash>zs<Bslash>k<Bslash>+<Bar><CR>
+
 " Neo 2 Layer 4 fixes
 inoremap l<Up> k
 nnoremap l<Up> <Up>
