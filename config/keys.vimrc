@@ -17,7 +17,7 @@ nnoremap ü <C-]>
 nnoremap Ü <C-O>
 
 " Jump to previous/next tag
-nnoremap <C-Left> ?<Bar><Bslash>zs<Bslash>k<Bslash>+<Bar><CR>
+nnoremap <C-Left> /<Bar><Bslash>zs<Bslash>k<Bslash>+<Bar><CR>
 nnoremap <C-Right> /<Bar><Bslash>zs<Bslash>k<Bslash>+<Bar><CR>
 
 " Neo 2 Layer 4 fixes
@@ -95,3 +95,9 @@ cnoremap <C-n> <Down>
 
 " Map Ctrl-Backspace to delete the previous word in insert mode.
 :imap <C-BS> <C-W>
+
+" comfortable moving between split windows
+nnoremap <S-down> <C-W><C-J>
+nnoremap <S-up> <C-W><C-K>
+nnoremap <S-right> <C-W><C-L>
+nnoremap <S-left> <C-W><C-H>
