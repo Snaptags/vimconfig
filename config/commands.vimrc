@@ -31,9 +31,6 @@ endif
 " JSON formatting
 :command! Json :%!python -m json.tool
 
-" Music library
-:command! E2m :syntax off|%s/\cE:%5Cmusik/M:%5Cmusik/g|:syntax on|:wq
-
 " shortcuts for vim renamer
 let g:RenamerSupportColonWToRename = 1
 :command! F s/.*/folder.jpg/|nohl
