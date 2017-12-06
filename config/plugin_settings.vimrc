@@ -16,6 +16,9 @@ if has("patch-7.4.710")
   map y <Plug>(highlightedyank)
 endif
 
+" https://github.com/mxw/vim-jsx
+let g:jsx_ext_required = 0
+
 " indentLine https://github.com/Yggdroot/indentLine.git
 let g:indentLine_color_term = 5
 let g:indentLine_color_gui = '#AE325B'

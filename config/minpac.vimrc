@@ -26,6 +26,8 @@ call minpac#add('Yggdroot/indentLine')
 call minpac#add('vimwiki/vimwiki')
 call minpac#add('tyru/open-browser.vim')
 call minpac#add('tpope/vim-characterize')
+call minpac#add('pangloss/vim-javascript')
+call minpac#add('mxw/vim-jsx')
 call minpac#add('w0rp/ale')
 
 " minpac commands:
