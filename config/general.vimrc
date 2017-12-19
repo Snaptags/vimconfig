@@ -84,6 +84,7 @@ set relativenumber
 set smartindent
 set autoindent
 if has('linebreak')
+  set linebreak   " don't wrap in the middle of a word
   set breakindent "indent wrapped lines to match start
 endif
 
