@@ -83,6 +83,9 @@ set relativenumber
 "Indent stuff
 set smartindent
 set autoindent
+if has('linebreak')
+  set breakindent "indent wrapped lines to match start
+endif
 
 "Always show the status line
 set laststatus=2
