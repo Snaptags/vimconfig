@@ -5,6 +5,7 @@ packadd minpac
 call minpac#init()
 call minpac#add('k-takata/minpac', {'type':'opt'})
 call minpac#add('scrooloose/nerdtree')
+call minpac#add('ctrlpvim/ctrlp.vim')
 call minpac#add('vim-airline/vim-airline')
 call minpac#add('vim-airline/vim-airline-themes')
 call minpac#add('altercation/vim-colors-solarized')
