@@ -12,6 +12,7 @@ map <Leader>tt <Plug>VimwikiToggleListItem
 nmap <Leader>d <Plug>VimwikiMakeDiaryNote
 
 let g:ctrlp_map = '<Leader>p'
+let g:ctrlp_custom_ignore = 'node_modules\|git'
 
 " highlight yanked text: http://www.vim.org/scripts/script.php?script_id=5425
 if !has("patch-8.0.1394")
