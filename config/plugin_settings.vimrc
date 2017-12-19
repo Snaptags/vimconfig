@@ -11,6 +11,8 @@ let g:vimwiki_list = [{'path': 'd:/owncloud/VimWiki/', 'syntax': 'markdown', 'ex
 map <Leader>tt <Plug>VimwikiToggleListItem
 nmap <Leader>d <Plug>VimwikiMakeDiaryNote
 
+let g:ctrlp_map = '<Leader>p'
+
 " highlight yanked text: http://www.vim.org/scripts/script.php?script_id=5425
 if !has("patch-8.0.1394")
   if has("patch-7.4.710")
