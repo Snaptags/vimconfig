@@ -13,7 +13,9 @@ nmap <Leader>d <Plug>VimwikiMakeDiaryNote
 
 " highlight yanked text: http://www.vim.org/scripts/script.php?script_id=5425
 if !has("patch-8.0.1394")
-  map y <Plug>(highlightedyank)
+  if has("patch-7.4.710")
+    map y <Plug>(highlightedyank)
+  endif
 endif
 
 " https://github.com/mxw/vim-jsx
