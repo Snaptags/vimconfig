@@ -12,7 +12,7 @@ map <Leader>tt <Plug>VimwikiToggleListItem
 nmap <Leader>d <Plug>VimwikiMakeDiaryNote
 
 " highlight yanked text: http://www.vim.org/scripts/script.php?script_id=5425
-if has("patch-7.4.710")
+if !has("patch-8.0.1394")
   map y <Plug>(highlightedyank)
 endif
 
@@ -111,3 +111,7 @@ if has("gui_running")
     let g:screen_size_by_vim_instance = 1
   endif
 endif
+
+let g:ale_linters = {
+\    'typescript': ['tslint', 'tsserver'],
+\}
