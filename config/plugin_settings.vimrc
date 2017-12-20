@@ -28,6 +28,7 @@ let g:jsx_ext_required = 0
 let g:indentLine_color_term = 5
 let g:indentLine_color_gui = '#AE325B'
 let g:indentLine_char = ''
+autocmd Filetype json let g:indentLine_enabled = 0   " disable for json, because the plugin hides quotes
 
 "vim-startify https://github.com/mhinz/vim-startify.git
 let g:startify_bookmarks = [ {'c': '~/vimfiles/vimrc'}, {'o': 'd:\ownCloud\VimWiki\ToDo.md'}, {'w': 'd:\ownCloud\VimWiki\index.md'} ]
