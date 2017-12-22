@@ -30,6 +30,7 @@ call minpac#add('pangloss/vim-javascript')
 call minpac#add('leafgarland/typescript-vim')
 call minpac#add('mxw/vim-jsx')
 call minpac#add('w0rp/ale')
+call minpac#add('Valloric/YouCompleteMe')
 
 " minpac commands:
 command! PackUpdate call minpac#update()
