@@ -24,7 +24,14 @@ call minpac#add('leafgarland/typescript-vim')
 call minpac#add('mxw/vim-jsx')
 
 " when running on Android, don't load all plugins
-if " arm " != matchstr(system("uname -a"), " arm")
+let g:android = 0
+if !has("win32")
+    if " arm " == matchstr(system("uname -a"), " arm")
+        let g:android = 1
+    endif
+endif
+
+if g:android != 1
     call minpac#add('scrooloose/nerdtree')
     call minpac#add('altercation/vim-colors-solarized')
     call minpac#add('qpkorr/vim-renamer')
@@ -33,7 +40,9 @@ if " arm " != matchstr(system("uname -a"), " arm")
     call minpac#add('tpope/vim-fugitive')
     call minpac#add('mhinz/vim-startify')
     call minpac#add('w0rp/ale')
-    call minpac#add('Valloric/YouCompleteMe')
+    if has("python")
+        call minpac#add('Valloric/YouCompleteMe')
+    endif
 endif
 
 " minpac commands:
