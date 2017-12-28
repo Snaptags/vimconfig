@@ -40,9 +40,11 @@ if g:android != 1
     call minpac#add('tpope/vim-fugitive')
     call minpac#add('mhinz/vim-startify')
     call minpac#add('w0rp/ale')
-    if has("python")
-        call minpac#add('Valloric/YouCompleteMe')
-    endif
+    call minpac#add('Valloric/YouCompleteMe', {'type':'opt'})
+endif
+
+if has("python")
+    packadd YouCompleteMe
 endif
 
 " minpac commands:
