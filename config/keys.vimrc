@@ -1,6 +1,12 @@
 
 if !has('win32') " use windows keybinding in linux, too
    nnoremap <silent> <C-q> <C-v>
+else
+  if !has('gui')
+      " work around a very strange ConEmu issue: https://conemu.github.io/en/VimXterm.html#vim-bs-issue
+      inoremap <Char-0x07F> <BS>
+      nnoremap <Char-0x07F> <BS>
+    endif
 endif
 
 " <Ctrl-l> redraws the screen and removes any search highlighting.
