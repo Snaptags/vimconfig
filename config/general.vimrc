@@ -130,8 +130,15 @@ set history=700
 set autoread
 
 " do not place backup- or swap-files in local directories
-set backupdir=$HOME/AppData/Local/Temp/
-set directory=$HOME/AppData/Local/Temp/
+let b:tempdir = $HOME.'/vimtemp'
+if has('win32')
+    let b:tempdir = $HOME.'\AppData\Local\Temp\'
+endif
+if !isdirectory(b:tempdir)
+    call mkdir(b:tempdir, "p")
+endif
+execute "set backupdir=".escape(b:tempdir, ' ')
+execute "set directory=".escape(b:tempdir, ' ')
 
 if exists("+undofile")
   " undofile - This allows you to use undos after exiting and restarting
