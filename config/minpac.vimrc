@@ -36,6 +36,7 @@ if g:android != 1
     call minpac#add('scrooloose/nerdtree')
     call minpac#add('qpkorr/vim-renamer')
     call minpac#add('Snaptags/vim-fullscreen')
+    call minpac#add('chrisbra/csv.vim')
     call minpac#add('Snaptags/vim-gitgutter')
     call minpac#add('tpope/vim-fugitive')
     call minpac#add('mhinz/vim-startify')
