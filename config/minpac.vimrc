@@ -22,6 +22,7 @@ call minpac#add('tyru/open-browser.vim')
 call minpac#add('tpope/vim-characterize')
 call minpac#add('pangloss/vim-javascript')
 call minpac#add('leafgarland/typescript-vim')
+call minpac#add('ianks/vim-tsx')
 call minpac#add('mxw/vim-jsx')
 
 " when running on Android, don't load all plugins
@@ -37,7 +38,7 @@ if g:android != 1
     call minpac#add('qpkorr/vim-renamer')
     call minpac#add('Snaptags/vim-fullscreen')
     call minpac#add('chrisbra/csv.vim')
-    call minpac#add('Snaptags/vim-gitgutter')
+    " call minpac#add('airblade/vim-gitgutter')
     call minpac#add('tpope/vim-fugitive')
     call minpac#add('mhinz/vim-startify')
     call minpac#add('w0rp/ale')
