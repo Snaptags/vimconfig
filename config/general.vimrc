@@ -19,6 +19,8 @@ set synmaxcol=200
 "Display current cursor position in lower right corner.
 set ruler
 
+set viminfo='100,n$HOME/vimfiles/info/viminfo
+
 " Search down into subfolders
 " Provides tab-completion for all file-related tasks
 " Source: https://www.youtube.com/watch?v=XA2WjJbmmoM
