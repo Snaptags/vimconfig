@@ -80,6 +80,9 @@ set number
 "Prefer relative line numbering?
 set relativenumber
 
+"better increase/decrease of numbers with leading zeros (e.g. 08 → 09):
+set nrformats=bin,hex
+
 "Indent stuff
 set smartindent
 set autoindent
