@@ -32,6 +32,7 @@ autocmd Filetype json let g:indentLine_enabled = 0   " disable for json, because
 
 "vim-startify https://github.com/mhinz/vim-startify.git
 let g:startify_bookmarks = [ {'c': $VIMHOME.'/vimrc'}, {'o': 'd:\ownCloud\VimWiki\ToDo.md'}, {'w': 'd:\ownCloud\VimWiki\index.md'} ]
+let g:startify_enable_unsafe = 1
 let g:ascii = [
       \ '         __',
       \ ' .--.--.|__|.--------.',
