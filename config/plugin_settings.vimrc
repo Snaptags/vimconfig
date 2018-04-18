@@ -1,3 +1,5 @@
+" prevent infinite loop when using git-gutter
+set noshelltemp
 
 " bom symbol for vim-devicons
 let g:WebDevIconsUnicodeByteOrderMarkerDefaultSymbol = ''
