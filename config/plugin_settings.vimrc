@@ -1,12 +1,5 @@
-" prevent infinite loop when using git-gutter
-set noshelltemp
-
 " bom symbol for vim-devicons
 let g:WebDevIconsUnicodeByteOrderMarkerDefaultSymbol = ''
-
-" https://github.com/airblade/vim-gitgutter/issues/377
-let g:gitgutter_async=0
-let g:gitgutter_max_signs = 500  " default value
 
 " vimwiki/vimwiki https://github.com/vimwiki/vimwiki
 let g:vimwiki_list = [{'path': 'd:/owncloud/VimWiki/', 'syntax': 'markdown', 'ext': '.md'}]
