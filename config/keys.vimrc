@@ -26,6 +26,9 @@ nnoremap Ü <C-O>
 nnoremap <C-Left> /<Bar><Bslash>zs<Bslash>k<Bslash>+<Bar><CR>
 nnoremap <C-Right> /<Bar><Bslash>zs<Bslash>k<Bslash>+<Bar><CR>
 
+" Dictionary completion made easy
+inoremap <C-e> <C-x><C-k>
+
 " Neo 2 Layer 4 fixes
 inoremap l<Up> k
 nnoremap l<Up> <Up>
