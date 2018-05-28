@@ -20,7 +20,8 @@ set synmaxcol=200
 set ruler
 
 "http://vim.wikia.com/wiki/Disable_beeping
-set noerrorbells
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
 
 " Search down into subfolders
 " Provides tab-completion for all file-related tasks
