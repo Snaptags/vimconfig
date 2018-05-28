@@ -19,6 +19,9 @@ set synmaxcol=200
 "Display current cursor position in lower right corner.
 set ruler
 
+"http://vim.wikia.com/wiki/Disable_beeping
+set noerrorbells
+
 " Search down into subfolders
 " Provides tab-completion for all file-related tasks
 " Source: https://www.youtube.com/watch?v=XA2WjJbmmoM
