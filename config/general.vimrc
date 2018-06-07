@@ -28,6 +28,11 @@ autocmd GUIEnter * set visualbell t_vb=
 " Source: https://www.youtube.com/watch?v=XA2WjJbmmoM
 set path+=**
 
+" default shell for :terminal
+if has('win32')
+  set shell=powershell.exe\ -NoExit\ -file\ \"d:\ownCloud\Software-Settings\Windows\ Powershell\profile.ps1\"
+endif
+
 "set window size for gvim
 if has("gui_running")
   " GUI is running or is about to start.
