@@ -29,9 +29,9 @@ autocmd GUIEnter * set visualbell t_vb=
 set path+=**
 
 " default shell for :terminal
-if has('win32')
-  set shell=powershell.exe\ -NoExit\ -file\ \"d:\ownCloud\Software-Settings\Windows\ Powershell\profile.ps1\"
-endif
+" if has('win32')
+"   set shell=powershell.exe\ -NoExit\ -file\ \"d:\ownCloud\Software-Settings\Windows\ Powershell\profile.ps1\"
+" endif
 
 "set window size for gvim
 if has("gui_running")
