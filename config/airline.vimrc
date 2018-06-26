@@ -28,28 +28,12 @@ if has('autocmd')
   augroup END
 endif
 
-if has("gui_running")
-    call airline#parts#define_function(
-      \ 'fencbomffmt',
-      \ 'Airline_file_encoding_bom_file_format'
-    \)
-endif
-
 function! s:airline_init()
   let l:spc = g:airline_symbols.space
   let g:airline_section_z = airline#section#create(['windowswap', 'obsession', '%3p%%'.spc, 'linenr', 'maxlinenr', spc.'%3v'])
   let g:airline_section_y = airline#section#create_right([
     \ 'fencbomffmt'
   \])
-endfunction
-
-function! Airline_file_encoding_bom_file_format()
-  return printf(
-    \ '%s%s%s',
-    \ &fenc,
-    \ &bomb ? '[bom]' : '',
-    \ strlen(&ff) > 0 ? '['.&ff.']' : ''
-  \)
 endfunction
 
 let g:airline_running = 1
