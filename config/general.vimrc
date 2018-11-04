@@ -65,7 +65,9 @@ if !has('win32') && !has('gui_running')
   let g:solarized_termtrans=1
 endif
 set background=dark
-colorscheme solarized
+if g:android != 1
+    colorscheme solarized
+endif
 " Stupid Windows settings
 if has('win32') && !has('gui_running') && !empty($CONEMUBUILD)
     let &t_AB="\e[48;5;%dm"

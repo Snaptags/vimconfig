@@ -26,13 +26,6 @@ call minpac#add('ianks/vim-tsx')
 call minpac#add('mxw/vim-jsx')
 
 " when running on Android, don't load all plugins
-let g:android = 0
-if !has("win32")
-    if " arm" == matchstr(system("uname -a"), " arm")
-        let g:android = 1
-    endif
-endif
-
 if g:android != 1
     call minpac#add('scrooloose/nerdtree')
     call minpac#add('qpkorr/vim-renamer')
