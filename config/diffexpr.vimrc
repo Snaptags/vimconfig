@@ -1,4 +1,5 @@
-
+set diffopt+=algorithm:patience
+set diffopt+=indent-heuristic
 set diffexpr=MyDiff()
 function! MyDiff()
    let opt = '-a --binary '
