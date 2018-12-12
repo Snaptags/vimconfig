@@ -34,7 +34,6 @@ if g:android != 1
     call minpac#add('tpope/vim-fugitive')
     call minpac#add('mhinz/vim-startify')
     call minpac#add('w0rp/ale')
-    call minpac#add('Valloric/YouCompleteMe', {'type':'opt'})
 endif
 
 if has("python")
