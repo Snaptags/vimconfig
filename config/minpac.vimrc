@@ -36,10 +36,6 @@ if g:android != 1
     call minpac#add('w0rp/ale')
 endif
 
-if has("python")
-    packadd YouCompleteMe
-endif
-
 " minpac commands:
 command! PackUpdate call minpac#update()
 command! PackClean call minpac#clean()
