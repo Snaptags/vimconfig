@@ -34,10 +34,9 @@ if g:android != 1
     call minpac#add('tpope/vim-fugitive')
     call minpac#add('mhinz/vim-startify')
     call minpac#add('w0rp/ale')
-endif
-
-if has("python")
-    packadd YouCompleteMe
+    if has("python")
+        call minpac#add('vim-scripts/shuffle.vim')
+    endif
 endif
 
 " minpac commands:
