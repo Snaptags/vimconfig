@@ -20,19 +20,21 @@ func Test_minpac_init()
   call assert_equal('git', g:minpac#opt.git)
   call assert_equal(1, g:minpac#opt.depth)
   call assert_equal(8, g:minpac#opt.jobs)
-  call assert_equal(1, g:minpac#opt.verbose)
+  call assert_equal(2, g:minpac#opt.verbose)
+  call assert_equal('vertical', g:minpac#opt.status_open)
   call assert_equal({}, minpac#getpluglist())
 
   let g:minpac#pluglist.foo = 'bar'
 
   " Change settings
-  call minpac#init({'package_name': 'm', 'git': 'foo', 'depth': 10, 'jobs': 2, 'verbose': 1})
+  call minpac#init({'package_name': 'm', 'git': 'foo', 'depth': 10, 'jobs': 2, 'verbose': 1, 'status_open': 'horizontal'})
   call assert_true(isdirectory('pack/m/start'))
   call assert_true(isdirectory('pack/m/opt'))
   call assert_equal('foo', g:minpac#opt.git)
   call assert_equal(10, g:minpac#opt.depth)
   call assert_equal(2, g:minpac#opt.jobs)
   call assert_equal(1, g:minpac#opt.verbose)
+  call assert_equal('horizontal', g:minpac#opt.status_open)
   call assert_equal({}, minpac#getpluglist())
 
   call delete('pack', 'rf')
@@ -54,9 +56,10 @@ func Test_minpac_add()
   call assert_equal('', p.branch)
   call assert_equal(1, p.depth)
   call assert_equal('', p.do)
+  call assert_equal('', p.rev)
 
   " With configuration
-  call minpac#add('k-takata/minpac', {'type': 'opt', 'frozen': 1, 'branch': 'master', 'depth': 10})
+  call minpac#add('k-takata/minpac', {'type': 'opt', 'frozen': 1, 'branch': 'master', 'depth': 10, 'rev': 'abcdef'})
   let p = minpac#getpluginfo('minpac')
   call assert_equal('https://github.com/k-takata/minpac.git', p.url)
   call assert_match('/pack/minpac/opt/minpac$', p.dir)
@@ -65,6 +68,7 @@ func Test_minpac_add()
   call assert_equal('master', p.branch)
   call assert_equal(10, p.depth)
   call assert_equal('', p.do)
+  call assert_equal('abcdef', p.rev)
 
   " SSH URL
   call minpac#add('git@github.com:k-takata/minpac.git', {'name': 'm'})
@@ -93,6 +97,9 @@ func Test_minpac_add()
 endfunc
 
 " Tests for minpac#getpackages()
+func s:getnames(plugs)
+  return sort(map(a:plugs, {-> substitute(v:val, '^.*[/\\]', '', '')}))
+endfunc
 func Test_minpac_getpackages()
   call delete('pack', 'rf')
 
@@ -112,37 +119,59 @@ func Test_minpac_getpackages()
 
   " All plugins
   let p = minpac#getpackages()
-  call filter(p, {-> v:val !~# 'pack/dist'})
-  call assert_equal(sort(plugs[:]), sort(p))
+  let exp = plugs[:]
+  call assert_equal(sort(exp), sort(p))
+  " name only
+  let p = minpac#getpackages('', '', '', 1)
+  call assert_equal(s:getnames(exp), sort(p))
 
   " All packages
   let p = minpac#getpackages('', 'NONE')
-  call filter(p, {-> v:val !~# 'pack/dist'})
-  call assert_equal(['./pack/foo', './pack/minpac'], sort(p))
+  let exp = ['./pack/foo', './pack/minpac']
+  call assert_equal(sort(exp), sort(p))
+  " name only
+  let p = minpac#getpackages('', 'NONE', '', 1)
+  call assert_equal(s:getnames(exp), sort(p))
 
   " Plugins under minpac
   let p = minpac#getpackages('minpac')
-  call filter(p, {-> v:val !~# 'pack/dist'})
-  call assert_equal(sort(plugs[0 : 3]), sort(p))
+  let exp = plugs[0 : 3]
+  call assert_equal(sort(exp), sort(p))
+  " name only
+  let p = minpac#getpackages('minpac', '', '', 1)
+  call assert_equal(s:getnames(exp), sort(p))
 
   " 'start' plugins
   let p = minpac#getpackages('', 'start')
-  call filter(p, {-> v:val !~# 'pack/dist'})
-  call assert_equal(sort(plugs[0 : 1] + plugs[4 : 5]), sort(p))
+  let exp = plugs[0 : 1] + plugs[4 : 5]
+  call assert_equal(sort(exp), sort(p))
+  " name only
+  let p = minpac#getpackages('', 'start', '', 1)
+  call assert_equal(s:getnames(exp), sort(p))
 
   " 'opt' plugins
   let p = minpac#getpackages('*', 'opt', '')
-  call filter(p, {-> v:val !~# 'pack/dist'})
-  call assert_equal(sort(plugs[2 : 3] + plugs[6 : 7]), sort(p))
+  let exp = plugs[2 : 3] + plugs[6 : 7]
+  call assert_equal(sort(exp), sort(p))
+  " name only
+  let p = minpac#getpackages('*', 'opt', '', 1)
+  call assert_equal(s:getnames(exp), sort(p))
 
   " Plugins with 'plug1*' name
   let p = minpac#getpackages('', '', 'plug1*')
-  call filter(p, {-> v:val !~# 'pack/dist'})
-  call assert_equal(plugs[1 : 1], p)
+  let exp = plugs[1 : 1]
+  call assert_equal(sort(exp), sort(p))
+  " name only
+  let p = minpac#getpackages('', '', 'plug1', 1)
+  call assert_equal(s:getnames(exp), sort(p))
 
   " No match
   let p = minpac#getpackages('minpac', 'opt', 'plug1*')
-  call assert_equal([], p)
+  let exp = []
+  call assert_equal(sort(exp), sort(p))
+  " name only
+  let p = minpac#getpackages('minpac', 'opt', 'plug1*', 1)
+  call assert_equal(s:getnames(exp), sort(p))
 
   call delete('pack', 'rf')
 endfunc

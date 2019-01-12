@@ -1,8 +1,14 @@
 minpac#add()	minpac.txt	/*minpac#add()*
 minpac#clean()	minpac.txt	/*minpac#clean()*
+minpac#getpackages()	minpac.txt	/*minpac#getpackages()*
 minpac#getpluginfo()	minpac.txt	/*minpac#getpluginfo()*
+minpac#getpluglist()	minpac.txt	/*minpac#getpluglist()*
 minpac#init()	minpac.txt	/*minpac#init()*
+minpac#status()	minpac.txt	/*minpac#status()*
 minpac#update()	minpac.txt	/*minpac#update()*
+minpac-<CR>	minpac.txt	/*minpac-<CR>*
+minpac-CTRL-j	minpac.txt	/*minpac-CTRL-j*
+minpac-CTRL-k	minpac.txt	/*minpac-CTRL-k*
 minpac-commands	minpac.txt	/*minpac-commands*
 minpac-concept	minpac.txt	/*minpac-concept*
 minpac-contents	minpac.txt	/*minpac-contents*
@@ -10,9 +16,11 @@ minpac-finish-update-hooks	minpac.txt	/*minpac-finish-update-hooks*
 minpac-functions	minpac.txt	/*minpac-functions*
 minpac-hooks	minpac.txt	/*minpac-hooks*
 minpac-installation	minpac.txt	/*minpac-installation*
+minpac-mappings	minpac.txt	/*minpac-mappings*
 minpac-overview	minpac.txt	/*minpac-overview*
 minpac-plugin_name	minpac.txt	/*minpac-plugin_name*
 minpac-post-update-hooks	minpac.txt	/*minpac-post-update-hooks*
+minpac-q	minpac.txt	/*minpac-q*
 minpac-requirements	minpac.txt	/*minpac-requirements*
 minpac-usage	minpac.txt	/*minpac-usage*
 minpac.txt	minpac.txt	/*minpac.txt*
