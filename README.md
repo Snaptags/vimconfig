@@ -6,11 +6,7 @@ cd ~
 
 git clone https://github.com/Snaptags/vimconfig vimfiles
 
-cd vimfiles
-
-git submodule init
-
-git submodule update
+open vim and maybe run :PackUpdate multiple times
 
 
 ## INSTALL DETAILS LINUX
@@ -22,11 +18,4 @@ git clone https://github.com/powerline/fonts powerline_fonts
 ./powerline_fonts/install.sh
 
 git clone https://github.com/Snaptags/vimconfig .vim
-
-cd .vim
-
-git submodule init
-
-git submodule update
-
 
