@@ -19,6 +19,12 @@ set synmaxcol=200
 "Display current cursor position in lower right corner.
 set ruler
 
+"change the current working directory to match the open buffer
+set autochdir
+
+"show (partial) command in status line
+set showcmd
+
 "http://vim.wikia.com/wiki/Disable_beeping
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
