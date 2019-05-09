@@ -24,6 +24,7 @@ call minpac#add('pangloss/vim-javascript')
 call minpac#add('leafgarland/typescript-vim')
 call minpac#add('ianks/vim-tsx')
 call minpac#add('mxw/vim-jsx')
+call minpac#add('editorconfig/editorconfig-vim')
 
 " when running on Android, don't load all plugins
 if g:android != 1
