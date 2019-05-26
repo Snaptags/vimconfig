@@ -2,7 +2,7 @@
 if has("autocmd")
   augroup vimrc
     autocmd!
-    autocmd BufReadPost *Owncloud/VimWiki/ToDo.md :normal! Go
+    autocmd BufReadPost *VimWiki/ToDo.md :normal! Go
     " Source the vimrc file after saving it
     autocmd bufwritepost vimrc source $MYVIMRC
     autocmd bufwritepost .vimrc source $MYVIMRC
