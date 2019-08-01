@@ -4,7 +4,7 @@
 packadd minpac
 call minpac#init()
 call minpac#add('k-takata/minpac', {'type':'opt'})
-call minpac#add('altercation/vim-colors-solarized')
+call minpac#add('lifepillar/vim-solarized8')
 call minpac#add('ctrlpvim/ctrlp.vim')
 call minpac#add('vim-airline/vim-airline')
 call minpac#add('vim-airline/vim-airline-themes')

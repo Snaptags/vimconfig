@@ -72,7 +72,7 @@ if !has('win32') && !has('gui_running')
 endif
 set background=dark
 if g:android != 1
-    colorscheme solarized
+    colorscheme solarized8
 endif
 " Stupid Windows settings
 if has('win32') && !has('gui_running') && !empty($CONEMUBUILD)
