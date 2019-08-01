@@ -191,7 +191,7 @@ if !has('win32') && !has('gui_running')
     highlight SpecialKey ctermfg=13 ctermbg=NONE
 else
     highlight NonText guifg=#AE325B ctermfg=5 ctermbg=8
-    highlight SpecialKey guifg=#AE325B guibg=#002B36 ctermfg=5 ctermbg=8
+    highlight SpecialKey guifg=#AE325B guibg=bg ctermfg=5 ctermbg=8
 endif
 
 " Open URI under cursor.
