@@ -36,6 +36,7 @@ if g:android != 1
     call minpac#add('tpope/vim-fugitive')
     call minpac#add('mhinz/vim-startify')
     call minpac#add('w0rp/ale')
+    call minpac#add('iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' })
     if has("python")
         call minpac#add('vim-scripts/shuffle.vim')
     endif
