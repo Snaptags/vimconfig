@@ -2,13 +2,14 @@
 let g:WebDevIconsUnicodeByteOrderMarkerDefaultSymbol = ''
 
 " vimwiki/vimwiki https://github.com/vimwiki/vimwiki
-let g:vimwiki_list = [{'path': '~/VimWiki/', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_root = '~/VimWiki/'
 if isdirectory('d:/owncloud/VimWiki') " override default
-  let g:vimwiki_list = [{'path': 'd:/owncloud/VimWiki/', 'syntax': 'markdown', 'ext': '.md'}]
+  let g:vimwiki_root = 'd:/owncloud/VimWiki/'
 endif
 if isdirectory('~/Nextcloud/VimWiki')
-  let g:vimwiki_list = [{'path': '~/Nextcloud/VimWiki/', 'syntax': 'markdown', 'ext': '.md'}]
+  let g:vimwiki_root = '~/Nextcloud/VimWiki/'
 endif
+let g:vimwiki_list = [{'path': g:vimwiki_root, 'syntax': 'markdown', 'ext': '.md'}]
 map <Leader>tt <Plug>VimwikiToggleListItem
 nmap <Leader>d <Plug>VimwikiMakeDiaryNote
 
@@ -37,11 +38,7 @@ let g:NERDTreeDirArrowCollapsible = ''
 let g:NERDTreeGlyphReadOnly = ''
 
 "vim-startify https://github.com/mhinz/vim-startify.git
-if has('win32')
-  let g:startify_bookmarks = [ {'c': $VIMHOME.'/vimrc'}, {'o': 'd:\ownCloud\VimWiki\ToDo.md'}, {'w': 'd:\ownCloud\VimWiki\index.md'} ]
-else
-  let g:startify_bookmarks = [ {'c': $VIMHOME.'/vimrc'}, {'o': '~/Nextcloud/VimWiki/ToDo.md'}, {'w': '~/Nextcloud/VimWiki/index.md'} ]
-endif
+let g:startify_bookmarks = [ {'c': $VIMHOME.'/vimrc'}, {'o': g:vimwiki_root.'ToDo.md'}, {'w': g:vimwiki_root.'index.md'} ]
 let g:startify_enable_unsafe = 1
 let g:ascii = [
       \ '         __',
