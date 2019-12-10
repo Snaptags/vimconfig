@@ -2,10 +2,13 @@
 let g:WebDevIconsUnicodeByteOrderMarkerDefaultSymbol = ''
 
 " vimwiki/vimwiki https://github.com/vimwiki/vimwiki
-let g:vimwiki_list = [
-\ {'path': 'd:/owncloud/VimWiki/', 'syntax': 'markdown', 'ext': '.md'},
-\ {'path': '~/Nextcloud/VimWiki/', 'syntax': 'markdown', 'ext': '.md'} 
-\ ]
+let g:vimwiki_list = [{'path': '~/VimWiki/', 'syntax': 'markdown', 'ext': '.md'}]
+if isdirectory('d:/owncloud/VimWiki') " override default
+  let g:vimwiki_list = [{'path': 'd:/owncloud/VimWiki/', 'syntax': 'markdown', 'ext': '.md'}]
+endif
+if isdirectory('~/Nextcloud/VimWiki')
+  let g:vimwiki_list = [{'path': '~/Nextcloud/VimWiki/', 'syntax': 'markdown', 'ext': '.md'}]
+endif
 map <Leader>tt <Plug>VimwikiToggleListItem
 nmap <Leader>d <Plug>VimwikiMakeDiaryNote
 
