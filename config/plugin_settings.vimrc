@@ -3,8 +3,8 @@ let g:WebDevIconsUnicodeByteOrderMarkerDefaultSymbol = ''
 
 " vimwiki/vimwiki https://github.com/vimwiki/vimwiki
 let g:vimwiki_root = '~/VimWiki/'
-if isdirectory('d:/owncloud/VimWiki') " override default
-  let g:vimwiki_root = 'd:/owncloud/VimWiki/'
+if isdirectory('d:/__nextCloud__/VimWiki') " override default
+  let g:vimwiki_root = 'd:/__nextCloud__/VimWiki/'
 endif
 if isdirectory('~/Nextcloud/VimWiki')
   let g:vimwiki_root = '~/Nextcloud/VimWiki/'
