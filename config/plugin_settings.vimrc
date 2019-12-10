@@ -12,6 +12,7 @@ endif
 let g:vimwiki_list = [{'path': g:vimwiki_root, 'syntax': 'markdown', 'ext': '.md'}]
 map <Leader>tt <Plug>VimwikiToggleListItem
 nmap <Leader>d <Plug>VimwikiMakeDiaryNote
+nmap <Leader>i <Plug>VimwikiDiaryGenerateLinks
 
 let g:ctrlp_map = '<Leader>p'
 let g:ctrlp_custom_ignore = 'node_modules\|git'
