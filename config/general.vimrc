@@ -32,7 +32,7 @@ set showcmd
 set splitbelow
 
 " use powershell as default shell
-set shell=powershell
+"set shell=powershell
 
 "http://vim.wikia.com/wiki/Disable_beeping
 set noerrorbells visualbell t_vb=
