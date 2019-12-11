@@ -27,6 +27,9 @@ endif
 " https://github.com/mxw/vim-jsx
 let g:jsx_ext_required = 0
 
+" git-gutter
+set updatetime=100
+
 " indentLine https://github.com/Yggdroot/indentLine.git
 let g:indentLine_color_term = 5
 let g:indentLine_color_gui = '#AE325B'
