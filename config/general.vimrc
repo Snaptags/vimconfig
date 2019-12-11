@@ -22,8 +22,17 @@ set ruler
 "change the current working directory to match the open buffer
 set autochdir
 
+" enable dictionary completion
+set complete+=k
+
 "show (partial) command in status line
 set showcmd
+
+" cause all splits to happen below (including term)
+set splitbelow
+
+" use powershell as default shell
+set shell=powershell
 
 "http://vim.wikia.com/wiki/Disable_beeping
 set noerrorbells visualbell t_vb=
