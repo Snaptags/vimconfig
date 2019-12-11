@@ -8,15 +8,18 @@ let g:airline#extensions#tabline#enabled = 1
 
 if has('win32')
     let g:Powerline_symbols="fancy"
-    let g:airline_symbols = {}
-    let g:airline_left_sep = "\ue0b0" "   use double quotes here
-    let g:airline_left_alt_sep = "\ue0b1" " 
-    let g:airline_right_sep = "\ue0b2" "
-    let g:airline_right_alt_sep = "\ue0b3" " 
-    let g:airline_symbols.maxlinenr = "\ufa70"
-    let g:airline_symbols.branch = "\ue725" " 
-    let g:airline_symbols.readonly = "\ue0a2" " 
-    let g:airline_symbols.linenr = "" "\ue0a1
+    if !exists('g:airline_symbols')
+        let g:airline_symbols = {}
+    endif
+    let g:airline_left_sep          = "\ue0b0" "   use double quotes here
+    let g:airline_left_alt_sep      = "\ue0b1" " 
+    let g:airline_right_sep         = "\ue0b2" "
+    let g:airline_right_alt_sep     = "\ue0b3" " 
+    let g:airline_symbols.maxlinenr = "\ufa70" " 並
+    let g:airline_symbols.notexists = " \uf0eb" " 
+    let g:airline_symbols.branch    = "\ue725" " 
+    let g:airline_symbols.readonly  = "\uf456" " 
+    let g:airline_symbols.linenr    = "\ue0a1" " 
     let g:airline_theme = 'solarized'
 endif
 
