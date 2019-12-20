@@ -25,6 +25,9 @@ set autochdir
 " enable dictionary completion
 set complete+=k
 
+" don't conceal stuff while in insert mode
+set concealcursor=nc
+
 "show (partial) command in status line
 set showcmd
 
