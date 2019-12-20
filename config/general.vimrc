@@ -27,6 +27,7 @@ set complete+=k
 
 " don't conceal stuff while in insert mode
 set concealcursor=nc
+let g:indentLine_concealcursor='nc'
 
 "show (partial) command in status line
 set showcmd
