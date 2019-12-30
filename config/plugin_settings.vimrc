@@ -10,6 +10,7 @@ if isdirectory('~/Nextcloud/VimWiki')
   let g:vimwiki_root = '~/Nextcloud/VimWiki/'
 endif
 let g:vimwiki_list = [{'path': g:vimwiki_root, 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown'}
 map <Leader>tt <Plug>VimwikiToggleListItem
 nmap <Leader>d <Plug>VimwikiMakeDiaryNote
 nmap <Leader>i <Plug>VimwikiDiaryGenerateLinks
