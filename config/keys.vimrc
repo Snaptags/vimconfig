@@ -15,6 +15,11 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 " quicker Escaping (NO text will contain jj, so remap it to Esc :-)
 inoremap jj <ESC>
 
+" quickly insert n empty lines without leaving normal mode
+" https://vi.stackexchange.com/questions/3875/how-to-insert-a-newline-without-leaving-normal-mode
+nnoremap <silent> oo :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
+nnoremap <silent> OO :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>
+
 " open NERDTree
 nnoremap ß :NERDTreeToggle<CR>
 
