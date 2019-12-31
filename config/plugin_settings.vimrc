@@ -47,7 +47,7 @@ let g:startify_bookmarks = [ {'c': $VIMHOME.'/vimrc'}, {'o': g:vimwiki_root.'ToD
 let g:startify_enable_unsafe = 1
 let g:ascii = [
       \ '         __',
-      \ ' .--.--.|__|.--------.',
+      \ ' .——.——.|__|.————————.',
       \ ' |  |  ||  ||        |',
       \ '  \___/ |__||__|__|__|',
       \ ' '
