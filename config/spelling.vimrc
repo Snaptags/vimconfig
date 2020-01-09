@@ -41,6 +41,7 @@ function! QuickSpell()
     " Show as many columns as will fit in the window.
     let l:sug = spellsuggest(expand('<cword>'), 9)
     let l:c = 0
+    if len(l:sug) < 1 | echo "" | return | endif
     for l:i in range(0, len(l:sug))
         let l:c += len(l:sug[l:i - 1]) + len(printf('%d ', l:i + 1))
         " The -5 is needed to prevent some hit-enter prompts, even when there is
