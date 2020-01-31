@@ -29,6 +29,7 @@ call minpac#add('editorconfig/editorconfig-vim')
 
 " when running on Android, don't load all plugins
 if g:android != 1
+    call minpac#add('mileszs/ack.vim')
     call minpac#add('scrooloose/nerdtree')
     call minpac#add('qpkorr/vim-renamer')
     call minpac#add('Snaptags/vim-fullscreen')

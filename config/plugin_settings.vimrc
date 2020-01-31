@@ -25,6 +25,10 @@ if !has("patch-8.0.1394")
   endif
 endif
 
+" https://github.com/mileszs/ack.vim
+let g:ackprg = 'ag --vimgrep'
+:command! -nargs=* Ag Ack <args>
+
 " https://github.com/mxw/vim-jsx
 let g:jsx_ext_required = 0
 
