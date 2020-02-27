@@ -60,7 +60,7 @@ if has("gui_running")
 endif
 " default font
 if has('win32')
-    set guifont=DankMono_NF_monospacified_for_D:h13
+  set guifont=JetBrainsMonoMedium\ Nerd\ Font\ M:h11
 else
   " mkdir ~/.fonts/
   " cd ~/.fonts/
