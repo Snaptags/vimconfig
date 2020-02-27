@@ -153,9 +153,6 @@ set encoding=utf-8      " sets how vim shall represent characters internally
 set fileencoding=utf-8  " the encoding written to file
 set fileencodings=ucs-bom,utf8,latin1,prc
 
-" enable ligatures
-set renderoptions=type:directx
-
 " hide vim mode indicator in favour of airline status bar
 set noshowmode
 
