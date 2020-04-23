@@ -56,6 +56,7 @@ let g:ascii = [
       \ '  \___/ |__||__|__|__|',
       \ ' '
       \]
+let g:startify_fortune_use_unicode = 0
 let g:startify_custom_header =
       \ 'map(g:ascii + startify#fortune#boxed(), "\"   \".v:val")'
 
@@ -138,3 +139,11 @@ endif
 let g:ale_linters = {
 \    'typescript': ['tslint', 'tsserver'],
 \}
+
+let g:ale_fixers = {
+\   'typescript': ['prettier'],
+\   'javascript': ['prettier'],
+\   'css': ['prettier'],
+\}
+
+let g:ale_fix_on_save = 1
