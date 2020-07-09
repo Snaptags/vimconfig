@@ -62,11 +62,7 @@ endif
 if has('win32')
   set guifont=JetBrainsMonoMedium\ Nerd\ Font\ M:h11
 else
-  " mkdir ~/.fonts/
-  " cd ~/.fonts/
-  " wget https://github.com/powerline/fonts/blob/master/DejaVuSansMono/DejaVu%20Sans%20Mono%20for%20Powerline.ttf
-  " fc-cache -vf ~/.fonts/
-  set guifont=DejaVu\ Sans\ Mono\ for\ Powerline
+  set guifont=JetBrainsMonoMedium\ Nerd\ Font,\ Medium:h14
 endif
 "Ever notice a slight lag after typing the leader key + command? This lowers
 "the timeout.
