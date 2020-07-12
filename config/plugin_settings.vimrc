@@ -59,6 +59,11 @@ let g:ascii = [
 let g:startify_fortune_use_unicode = 0
 let g:startify_custom_header =
       \ 'map(g:ascii + startify#fortune#boxed(), "\"   \".v:val")'
+let g:startify_skiplist = [
+      \ '\\fritz.nas',
+      \ '\\zboxkodi',
+      \ '\\beethoven'
+      \ ]
 
 " http://vim.wikia.com/wiki/Restore_screen_size_and_position
 " " To enable the saving and restoring of screen positions.
@@ -144,6 +149,7 @@ let g:ale_fixers = {
 \   'typescript': ['prettier'],
 \   'javascript': ['prettier'],
 \   'css': ['prettier'],
+\   'html': ['prettier'],
 \}
 
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
