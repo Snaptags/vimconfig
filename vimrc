@@ -14,8 +14,8 @@ source $VIMHOME/config/minpac.vimrc
 source $VIMHOME/config/plugin_settings.vimrc
 if g:android != 1
   source $VIMHOME/config/commands.vimrc
+  source $VIMHOME/config/keys.vimrc
 endif
-source $VIMHOME/config/keys.vimrc
 source $VIMHOME/config/spelling.vimrc
 if has('vim_starting')
   source $VIMHOME/config/airline.vimrc
