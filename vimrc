@@ -3,7 +3,8 @@ if &compatible | set nocompatible | endif " Avoid side effects if `nocp` already
 " detect Android to disable incompatible stuff
 let g:android = 0
 if !has("win32")
-    if " arm" == matchstr(system("uname -a"), " arm")
+    let sys = system("uname -a")
+    if (" arm" == matchstr(sys, " arm")) || (" aarch64" == matchstr(sys, " aarch64")) 
         let g:android = 1
     endif
 endif
