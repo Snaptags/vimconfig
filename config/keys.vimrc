@@ -31,44 +31,46 @@ nnoremap Ü <C-O>
 nnoremap <C-Left> /<Bar><Bslash>zs<Bslash>k<Bslash>+<Bar><CR>
 nnoremap <C-Right> /<Bar><Bslash>zs<Bslash>k<Bslash>+<Bar><CR>
 
-" Neo 2 Layer 4 fixes
-inoremap l<Up> k
-nnoremap l<Up> <Up>
-vnoremap l<Up> k
-inoremap a<Down> j
-nnoremap a<Down> <Down>
-vnoremap a<Down> j
-inoremap i<Left> h
-nnoremap i<Left> <Left>
-vnoremap i<Left> h
-inoremap e<Right> l
-nnoremap e<Right> <Right>
-vnoremap e<Right> l
-inoremap ?<Esc> <Esc>
-nnoremap ?<Esc> <Esc>
-inoremap v<BS> <BS>
-nnoremap v<BS> <BS>
-inoremap c<Del> <Del>
-nnoremap c<Del> <Del>
-inoremap ?<Tab> <Tab>
-nnoremap ?<Tab> <Tab>
-inoremap u<Home> <Home>
-nnoremap u<Home> <Home>
-inoremap p<CR> <CR>
-nnoremap p<CR> <CR>
-inoremap o<End> <End>
-nnoremap o<End> <End>
-inoremap x<PageUp> <PageUp>
-nnoremap x<PageUp> <PageUp>
-inoremap w<PageDown> <PageDown>
-nnoremap w<PageDown> <PageDown>
-inoremap ?<Insert> <Insert>
-nnoremap ?<Insert> <Insert>
-nnoremap \\ <c-]>
-nnoremap <Space> 0
-" not working :-(
-" inoremap z<Undo> <Undo>
-" nnoremap z<Undo> <Undo>
+
+if !has('win32') " Neo 2 Layer 4 fixes
+  inoremap l<Up> k
+  nnoremap l<Up> <Up>
+  vnoremap l<Up> k
+  inoremap a<Down> j
+  nnoremap a<Down> <Down>
+  vnoremap a<Down> j
+  inoremap i<Left> h
+  nnoremap i<Left> <Left>
+  vnoremap i<Left> h
+  inoremap e<Right> l
+  nnoremap e<Right> <Right>
+  vnoremap e<Right> l
+  inoremap ?<Esc> <Esc>
+  nnoremap ?<Esc> <Esc>
+  inoremap v<BS> <BS>
+  nnoremap v<BS> <BS>
+  inoremap c<Del> <Del>
+  nnoremap c<Del> <Del>
+  inoremap ?<Tab> <Tab>
+  nnoremap ?<Tab> <Tab>
+  inoremap u<Home> <Home>
+  nnoremap u<Home> <Home>
+  inoremap p<CR> <CR>
+  nnoremap p<CR> <CR>
+  inoremap o<End> <End>
+  nnoremap o<End> <End>
+  inoremap x<PageUp> <PageUp>
+  nnoremap x<PageUp> <PageUp>
+  inoremap w<PageDown> <PageDown>
+  nnoremap w<PageDown> <PageDown>
+  inoremap ?<Insert> <Insert>
+  nnoremap ?<Insert> <Insert>
+  nnoremap \\ <c-]>
+  nnoremap <Space> 0
+  " not working :-(
+  " inoremap z<Undo> <Undo>
+  " nnoremap z<Undo> <Undo>
+endif
 
 " https://github.com/ruedigerha/vim-fullscreen
 " requires Python for Windows Extensions: https://sourceforge.net/projects/pywin32/files/
