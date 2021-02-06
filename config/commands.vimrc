@@ -34,6 +34,6 @@ endif
 " shortcuts for vim renamer
 let g:RenamerSupportColonWToRename = 1
 :command! F s/.*/folder.jpg/|nohl
-:command! Dela %s/\(^\d\d - \).* - /\1/|%s/^01 - /&/|nohl
+:command! Dela %s/\(^\d\d - \)[^-]* - /\1/|%s/\v(^(.{-}-){1}.*)@<=-/—/g|%s/^01 - /&/|nohl
 
 :command! P terminal pwsh.exe -NoExit
