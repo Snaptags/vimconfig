@@ -35,5 +35,9 @@ endif
 let g:RenamerSupportColonWToRename = 1
 :command! F s/.*/folder.jpg/|nohl
 :command! Dela %s/\(^\d\d - \)[^-]* - /\1/|%s/\v(^(.{-}-){1}.*)@<=-/—/g|%s/^01 - /&/|nohl
+:command! Colon :normal i：<ESC>
+:command! QuestionMark :normal i？<ESC>
+:command! Slash :normal i／<ESC>
+:command! Star :normal i★<ESC>
 
 :command! P terminal pwsh.exe -NoExit
