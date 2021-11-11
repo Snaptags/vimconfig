@@ -24,5 +24,5 @@ function! AsyncPush()
   endif
 endfunction
 
-:command! -buffer W  execute "silent Gwrite | silent Gcommit -a -m 'update'" | call AsyncPush()
-:command! -buffer WQ execute "Gwrite | Gcommit -a -m 'update'" | Gpush | q
+:command! -buffer W  execute "silent Gwrite | silent Git commit -a -m 'update'" | call AsyncPush()
+:command! -buffer WQ execute "Gwrite | Git commit -a -m 'update'" | Gpush | q
