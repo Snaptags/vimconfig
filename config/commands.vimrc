@@ -31,11 +31,13 @@ endif
 " JSON formatting
 :command! Json :%!python -m json.tool
 
+
 " shortcuts for vim renamer
 let g:RenamerSupportColonWToRename = 1
 :command! F s/.*/folder.jpg/|nohl
 :command! Dela %s/\(^\d\d - \)[^-]* - /\1/|%s/\v(^(.{-}-){1}.*)@<=-/—/g|%s/^01 - /&/|nohl
 :command! Colon :normal i：<ESC>
+:command! Lyrics %s/\[.*\]\n//g|normal ggVG"*yZQ
 :command! QuestionMark :normal i？<ESC>
 :command! Slash :normal i／<ESC>
 :command! Star :normal i★<ESC>
