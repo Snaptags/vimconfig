@@ -142,7 +142,8 @@ if has("gui_running")
 endif
 
 let g:ale_linters = {
-\    'typescript': ['tslint', 'tsserver'],
+\   'typescript': ['eslint'],
+\   'json': ['jsonlint'],
 \}
 
 let g:ale_fixers = {
