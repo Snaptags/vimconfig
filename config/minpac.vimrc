@@ -34,7 +34,7 @@ if g:android != 1
     call minpac#add('qpkorr/vim-renamer')
     call minpac#add('Snaptags/vim-fullscreen')
     call minpac#add('chrisbra/csv.vim')
-    call minpac#add('airblade/vim-gitgutter')
+    call minpac#add('airblade/vim-gitgutter', {'branch':'main'})
     call minpac#add('tpope/vim-fugitive')
     call minpac#add('mhinz/vim-startify')
     call minpac#add('dense-analysis/ale')
