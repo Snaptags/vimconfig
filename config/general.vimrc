@@ -62,7 +62,7 @@ endif
 if has('win32')
   set guifont=JetBrainsMonoMedium\ Nerd\ Font\ M:h11
 else
-  set guifont=JetBrainsMonoMedium\ Nerd\ Font,\ Medium:h14
+  set guifont=JetBrainsMono\ NF\ Regular\ 12
 endif
 "Ever notice a slight lag after typing the leader key + command? This lowers
 "the timeout.
@@ -72,7 +72,7 @@ let mapleader="ä"
 "Set the color scheme. Change this to your preference.
 "Here's 100 to choose from: http://www.vim.org/scripts/script.php?script_id=625
 if (&term != "builtin_gui")
-  set term=xterm
+  set term=gnome-256color
 endif
 set t_Co=256
 if !has('win32') && !has('gui_running')
