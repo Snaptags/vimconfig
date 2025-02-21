@@ -71,7 +71,7 @@ let mapleader="ä"
 
 "Set the color scheme. Change this to your preference.
 "Here's 100 to choose from: http://www.vim.org/scripts/script.php?script_id=625
-if (&term != "builtin_gui")
+if !has('win32') && (&term != "builtin_gui")
   set term=gnome-256color
 endif
 set t_Co=256
